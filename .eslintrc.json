@@ -4,10 +4,7 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint","prettier"],
   "rules": {
     "no-console": "error",
     "react/no-unescaped-entities": 0

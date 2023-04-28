@@ -4,10 +4,10 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
-      "tsx": true
+      "jsx": true
     }
   },
-  "plugins": ["prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",

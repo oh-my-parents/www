@@ -7,7 +7,7 @@
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",

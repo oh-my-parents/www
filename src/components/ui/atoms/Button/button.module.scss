@@ -1,0 +1,63 @@
+.button {
+  border-radius: 24px;
+  border: none;
+  background-color: white;
+
+  &.small {
+    padding: 8px 10vw;
+  }
+
+  &.medium {
+    padding: 16px 15vw;
+  }
+
+  &.large {
+    padding: 20px;
+  }
+
+  /*
+  역할: 카카오 버튼
+  사용처 
+    - login.tsx
+  */
+  &.kakao {
+    background-color: #F9E000;
+    font-weight: 600;
+  }
+
+  /*
+  역할: 답변 선택 버튼 
+  사용처 
+    - answer.tsx
+  */
+  &.answer {
+    border: 1px solid #5A5A5A;
+    width: 80vw;
+    font-weight: 500;
+  }
+
+  /*
+  역할: 이전 화면으로 이동 버튼
+  사용처 
+    - answer.tsx
+  */
+  &.before {
+    border: 1px solid #1D8AEF;
+  }
+
+  /*
+  역할: 다음 화면으로 이동 버튼
+  사용처 
+    - answer.tsx
+  */
+  &.next {
+    background-color: #1D8AEF;
+    color: white;
+  }
+
+  &.isLoading {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+}

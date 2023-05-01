@@ -1,13 +1,20 @@
 import Button from "@/components/ui/atoms/Button/Button";
 import Typography from "@/components/ui/atoms/Typography/Typography";
-import { KAKAO_BUTTON_URL } from '@/constants/api.constants';
-
+import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
+import questionService from "@/service/question.service";
+import { Question } from "@/utils/recoil/atom";
+import { useSetRecoilState } from "recoil";
 
 export default function Root() {
   const onClickkakaoButton = () => {
-    window.location.replace(KAKAO_BUTTON_URL)
+    window.location.replace(KAKAO_BUTTON_URL);
   };
 
+  const getQuestion = async () => {
+    const questions = await questionService.getQuestions("MOHTER");
+    const setQuestion = useSetRecoilState(Question);
+    setQuestion(questions);
+  };
 
   return (
     <>
@@ -20,7 +27,7 @@ export default function Root() {
       />
       <Button
         children="언제더라.."
-        onClick={() => ""}
+        onClick={getQuestion}
         variant="answer"
         size="large"
         isLoading={false}

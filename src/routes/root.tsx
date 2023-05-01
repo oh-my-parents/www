@@ -1,12 +1,19 @@
 import Button from "@/components/ui/atoms/Button/Button";
 import Typography from "@/components/ui/atoms/Typography/Typography";
+import { KAKAO_BUTTON_URL } from '@/constants/api.constants';
+
 
 export default function Root() {
+  const onClickkakaoButton = () => {
+    window.location.replace(KAKAO_BUTTON_URL)
+  };
+
+
   return (
     <>
       <Button
         children="카카오톡으로 로그인"
-        onClick={() => ""}
+        onClick={onClickkakaoButton}
         variant="kakao"
         size="medium"
         isLoading={false}

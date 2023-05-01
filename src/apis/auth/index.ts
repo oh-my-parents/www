@@ -1,9 +1,15 @@
 import {KAKAO} from "@/constants/api.constants";
-import { kakaoPayload, authTokens } from "./types";
+import { kakaoPayload, Auth } from "./types";
 import fetcher from "../fecther";
 
 const login = async (payload: kakaoPayload) =>{
-  const {data} = await fetcher.post<authTokens>("/auth/login", payload);
+  const requsetData = {
+      accessToken: payload.access_token,
+      refreshToken: payload.refresh_token,
+      expiresIn: payload.expires_in,
+      refreshTokenExpiresIn: payload.refresh_token_expires_in,
+  }
+  const {data} = await fetcher.post<Auth>("/auth/login", requsetData);
 
   return data;
 }
@@ -21,12 +27,7 @@ const kakaoLogin = async (code:string) => {
     headers:{ "Content-Type": "application/x-www-form-urlencoded"}
   });
 
-  return {
-    access_token: data.access_token,
-    refresh_token: data.refresh_token,
-    expires_in: data.expires_in,
-    refresh_token_expires_in: data.refresh_token_expires_in,
-  };
+  return data;
 }
 
 

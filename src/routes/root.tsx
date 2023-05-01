@@ -4,35 +4,35 @@ export default function Root() {
   return (
     <>
       <Button
-        text="카카오톡으로 로그인"
+        children="카카오톡으로 로그인"
         onClick={() => ''}
         variant="kakao"
         size="medium"
         isLoading={false}
       />
       <Button
-        text="언제더라.."
+        children="언제더라.."
         onClick={() => ''}
         variant="answer"
         size="large"
         isLoading={false}
       />
       <Button
-        text="이전"
+        children="이전"
         onClick={() => ''}
         size="small"
         variant="before"
         isLoading={false}
       />
       <Button
-        text="다음"
+        children="다음"
         onClick={() => ''}
         size="small"
         variant="next"
         isLoading={false}
       />
       <Button
-        text="다음"
+        children="다음"
         onClick={() => ''}
         size="small"
         variant="next"

@@ -4,15 +4,14 @@ import $ from './button.module.scss';
 import IsLoadingComponent from './IsLoading.tsx';
 
 type Props = {
-  text: string;
+  children: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
-  props?: Array<string>;
-  size?: string;
-  variant?: 'kakao' | 'answer' | 'before' | 'next';
+  size: string;
+  variant: 'kakao' | 'answer' | 'before' | 'next';
   isLoading?: Boolean;
 };
 
-function Button({ text, onClick, size, variant, isLoading, ...props }: Props) {
+function Button({ children, onClick, size, variant, isLoading }: Props) {
   return (
     <button
       type="button"
@@ -20,9 +19,8 @@ function Button({ text, onClick, size, variant, isLoading, ...props }: Props) {
         [$.isLoading]: isLoading,
       })}
       onClick={onClick}
-      {...props}
     >
-      {!isLoading ? text : <IsLoadingComponent />}
+      {!isLoading ? children : <IsLoadingComponent />}
     </button>
   );
 }

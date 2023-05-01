@@ -4,8 +4,8 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
-  "extends": ["prettier", "naver/es5"],
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": ["naver","prettier"],
   "rules": {
     "react/no-unescaped-entities": 0,
     "semi":"off",

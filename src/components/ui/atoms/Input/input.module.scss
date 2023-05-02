@@ -1,15 +1,15 @@
-.input{
+.input {
   /*
   * varints
   */
   padding: 8px 16px;
   text-align: center;
   margin: 0;
-  &:focus{
+  &:focus {
     outline: none;
   }
-  
-  &.default{
+
+  &.default {
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: 4px;
@@ -22,27 +22,24 @@
   * sizes
   */
 
-  &.small{
+  &.small {
     font-size: medium;
     padding: 8px 16px;
   }
-  
-  &.medium{
+
+  &.medium {
     font-size: large;
     padding: 12px 20px;
-
   }
-  
-  &.large{
+
+  &.large {
     font-size: x-large;
     padding: 16px 24px;
-
   }
-  
-  &:disabled{
+
+  &:disabled {
     background-color: #e9ecef;
     color: #6c757d;
     cursor: not-allowed;
-  } 
-
+  }
 }

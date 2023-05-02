@@ -1,8 +1,7 @@
 import authManager from "@/utils/authManager/authManager";
-import {authApi} from "@/apis";
+import { authApi } from "@/apis";
 
-
-const login = async (code:string) => {
+const login = async (code: string) => {
   try {
     const kakaoPayload = await authApi.kakaoLogin(code);
     const token = await authApi.login(kakaoPayload);
@@ -13,9 +12,8 @@ const login = async (code:string) => {
     // error logging
     return false;
   }
-}
-
+};
 
 export default {
   login,
-}
+};

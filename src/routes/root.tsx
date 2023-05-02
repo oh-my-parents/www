@@ -1,24 +1,33 @@
 import Button from "@/components/ui/atoms/Button/Button";
 import Typography from "@/components/ui/atoms/Typography/Typography";
 import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
-import questionService from "@/service/question.service";
-import { Question } from "@/utils/recoil/atom";
 import { useSetRecoilState } from "recoil";
+import useGetQuestions from "@/hooks/useGetQuestions";
+import scoreService from "../service/score.service";
 import Input from "@/components/ui/atoms/Input";
 
 export default function Root() {
+  const { questions, getQuestions } = useGetQuestions();
   const onClickkakaoButton = () => {
     window.location.replace(KAKAO_BUTTON_URL);
   };
 
-  const getQuestion = async () => {
-    const questions = await questionService.getQuestions("MOHTER");
-    const setQuestion = useSetRecoilState(Question);
-    setQuestion(questions);
+  const onClickParentButton = (e) => {
+    getQuestions(e.target.value);
   };
 
+  const getScore = () => {
+    console.log(scoreService.getScore());
+  };
   return (
     <>
+      <Button
+        children="zz 로그인"
+        onClick={() => loginFn("testt")}
+        variant="kakao"
+        size="medium"
+        isLoading={false}
+      />
       <Button
         children="카카오톡으로 로그인"
         onClick={onClickkakaoButton}
@@ -28,14 +37,15 @@ export default function Root() {
       />
       <Button
         children="언제더라.."
-        onClick={getQuestion}
+        onClick={onClickParentButton}
         variant="answer"
         size="large"
+        value="mother"
         isLoading={false}
       />
       <Button
         children="이전"
-        onClick={() => ""}
+        onClick={getScore}
         size="small"
         variant="before"
         isLoading={false}

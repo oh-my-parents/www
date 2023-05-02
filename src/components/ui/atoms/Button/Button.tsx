@@ -1,20 +1,22 @@
-import React from 'react';
-import cn from 'classnames';
-import $ from './button.module.scss';
-import IsLoadingComponent from './IsLoading.tsx';
+import React from "react";
+import cn from "classnames";
+import $ from "./button.module.scss";
+import IsLoadingComponent from "./IsLoading.tsx";
 
 type Props = {
   children: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   size: string;
-  variant: 'kakao' | 'answer' | 'before' | 'next';
+  variant: "kakao" | "answer" | "before" | "next";
   isLoading?: Boolean;
+  value?: string;
 };
 
-function Button({ children, onClick, size, variant, isLoading }: Props) {
+function Button({ children, onClick, size, variant, isLoading, value }: Props) {
   return (
     <button
       type="button"
+      value={value}
       className={cn($.button, $[variant], $[size], {
         [$.isLoading]: isLoading,
       })}

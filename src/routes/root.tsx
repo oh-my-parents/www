@@ -4,6 +4,7 @@ import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
 import { useSetRecoilState } from "recoil";
 import useGetQuestions from "@/hooks/useGetQuestions";
 import scoreService from "../service/score.service";
+import Input from "@/components/ui/atoms/Input";
 
 export default function Root() {
   const { questions, getQuestions } = useGetQuestions();
@@ -72,6 +73,20 @@ export default function Root() {
       <Typography variant="question" size="large">
         부모님 <br /> 얼마나 알고 계신가요?
       </Typography>
+      <div>
+        <Input variant="default" size="small" />
+      </div>
+      <div>
+        <Input
+          variant="default"
+          size="medium"
+          placeholder="안녕하세요"
+          type="datetime-local"
+        />
+      </div>
+      <div>
+        <Input variant="default" size="large" type="password" />
+      </div>
     </>
   );
 }

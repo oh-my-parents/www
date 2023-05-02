@@ -5,6 +5,7 @@ import "./index.css";
 import Sample from "./routes/sample";
 import Root from "./routes/root";
 import Callback from "./routes/Callback";
+import { RecoilRoot } from "recoil";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RecoilRoot>
+      <RouterProvider router={router} />
+    </RecoilRoot>
   </React.StrictMode>,
 );

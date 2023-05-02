@@ -4,6 +4,7 @@ import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
 import questionService from "@/service/question.service";
 import { Question } from "@/utils/recoil/atom";
 import { useSetRecoilState } from "recoil";
+import Input from "@/components/ui/atoms/Input";
 
 export default function Root() {
   const onClickkakaoButton = () => {
@@ -62,6 +63,20 @@ export default function Root() {
       <Typography variant="question" size="large">
         부모님 <br /> 얼마나 알고 계신가요?
       </Typography>
+      <div>
+        <Input variant="default" size="small" />
+      </div>
+      <div>
+        <Input
+          variant="default"
+          size="medium"
+          placeholder="안녕하세요"
+          type="datetime-local"
+        />
+      </div>
+      <div>
+        <Input variant="default" size="large" type="password" />
+      </div>
     </>
   );
 }

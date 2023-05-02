@@ -58,10 +58,10 @@ export default function Root() {
         <Input variant="default" size="small" />
       </div>
       <div>
-        <Input variant="default" size="medium" placeholder="안녕하세요" />
+        <Input variant="default" size="medium" placeholder="안녕하세요" type="datetime-local" />
       </div>
       <div>
-        <Input variant="default" size="large" />
+        <Input variant="default" size="large" type="password"/>
       </div>
     </>
   );

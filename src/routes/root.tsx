@@ -1,11 +1,20 @@
 import Button from "@/components/ui/atoms/Button/Button";
 import Typography from "@/components/ui/atoms/Typography/Typography";
-import Input from "@/components/ui/atoms/Input";
 import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
+import questionService from "@/service/question.service";
+import { Question } from "@/utils/recoil/atom";
+import { useSetRecoilState } from "recoil";
+import Input from "@/components/ui/atoms/Input";
 
 export default function Root() {
   const onClickkakaoButton = () => {
     window.location.replace(KAKAO_BUTTON_URL);
+  };
+
+  const getQuestion = async () => {
+    const questions = await questionService.getQuestions("MOHTER");
+    const setQuestion = useSetRecoilState(Question);
+    setQuestion(questions);
   };
 
   return (
@@ -19,7 +28,7 @@ export default function Root() {
       />
       <Button
         children="언제더라.."
-        onClick={() => ""}
+        onClick={getQuestion}
         variant="answer"
         size="large"
         isLoading={false}
@@ -58,10 +67,15 @@ export default function Root() {
         <Input variant="default" size="small" />
       </div>
       <div>
-        <Input variant="default" size="medium" placeholder="안녕하세요" type="datetime-local" />
+        <Input
+          variant="default"
+          size="medium"
+          placeholder="안녕하세요"
+          type="datetime-local"
+        />
       </div>
       <div>
-        <Input variant="default" size="large" type="password"/>
+        <Input variant="default" size="large" type="password" />
       </div>
     </>
   );

@@ -1,0 +1,48 @@
+.input{
+  /*
+  * varints
+  */
+  padding: 8px 16px;
+  text-align: center;
+  margin: 0;
+  &:focus{
+    outline: none;
+  }
+  
+  &.default{
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  /*
+  * sizes
+  */
+
+  &.small{
+    font-size: medium;
+    padding: 8px 16px;
+  }
+  
+  &.medium{
+    font-size: large;
+    padding: 12px 20px;
+
+  }
+  
+  &.large{
+    font-size: x-large;
+    padding: 16px 24px;
+
+  }
+  
+  &:disabled{
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+  } 
+
+}

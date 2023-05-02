@@ -1,13 +1,12 @@
 import Button from "@/components/ui/atoms/Button/Button";
 import Typography from "@/components/ui/atoms/Typography/Typography";
-import { KAKAO_BUTTON_URL } from '@/constants/api.constants';
-
+import Input from "@/components/ui/atoms/Input";
+import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
 
 export default function Root() {
   const onClickkakaoButton = () => {
-    window.location.replace(KAKAO_BUTTON_URL)
+    window.location.replace(KAKAO_BUTTON_URL);
   };
-
 
   return (
     <>
@@ -55,6 +54,15 @@ export default function Root() {
       <Typography variant="question" size="large">
         부모님 <br /> 얼마나 알고 계신가요?
       </Typography>
+      <div>
+        <Input variant="default" size="small" />
+      </div>
+      <div>
+        <Input variant="default" size="medium" placeholder="안녕하세요" />
+      </div>
+      <div>
+        <Input variant="default" size="large" />
+      </div>
     </>
   );
 }

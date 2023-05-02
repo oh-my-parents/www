@@ -3,11 +3,11 @@ import cn from "classnames";
 import $ from "./input.module.scss";
 
 type Props = React.HTMLAttributes<HTMLInputElement> & {
-  size?: "small" | "medium" | "large";
+  size: "small" | "medium" | "large";
   variant: "default";
   disabled?: boolean;
   value?: string;
-  type?: HTMLInputTypeAttribute | undefined; 
+  type?: HTMLInputTypeAttribute | undefined;
 };
 
 function Input({ value, size, variant, disabled, type, ...props }: Props) {

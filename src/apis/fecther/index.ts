@@ -1,17 +1,23 @@
-import axios, {AxiosInstance, InternalAxiosRequestConfig} from "axios";
-import {AUTH_REQUIRED_REGEX_LIST, BASE_URL, DEFAULT_TIME_OUT} from "@/constants/api.constants";
+import axios, { AxiosInstance, InternalAxiosRequestConfig } from "axios";
+import {
+  AUTH_REQUIRED_REGEX_LIST,
+  BASE_URL,
+  DEFAULT_TIME_OUT,
+} from "@/constants/api.constants";
 import authManager from "@/utils/authManager/authManager";
 
 type fecther = AxiosInstance;
 
 const fetcher: fecther = axios.create({
   baseURL: BASE_URL,
-  timeout: DEFAULT_TIME_OUT
+  timeout: DEFAULT_TIME_OUT,
 });
 
-fetcher.interceptors.request.use((config)=>{
+fetcher.interceptors.request.use((config) => {
   const token = authManager.getToken();
-  const isAuthNeed = AUTH_REQUIRED_REGEX_LIST.some((pattern) => config.url?.match(pattern));
+  const isAuthNeed = AUTH_REQUIRED_REGEX_LIST.some((pattern) =>
+    config.url?.match(pattern),
+  );
 
   if (!isAuthNeed) return config;
 
@@ -22,8 +28,8 @@ fetcher.interceptors.request.use((config)=>{
     ...config,
     headers: {
       ...config.headers,
-      Authorization: `bearer ${token}`
-    }
+      Authorization: `bearer ${token}`,
+    },
   } as InternalAxiosRequestConfig<any>;
 
   return newConfing;

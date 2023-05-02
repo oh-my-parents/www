@@ -1,29 +1,31 @@
 import Button from "@/components/ui/atoms/Button/Button";
 import Typography from "@/components/ui/atoms/Typography/Typography";
 import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
-import { useSetRecoilState } from "recoil";
 import useGetQuestions from "@/hooks/useGetQuestions";
 import scoreService from "../service/score.service";
 import Input from "@/components/ui/atoms/Input";
 
 export default function Root() {
-  const { questions, getQuestions } = useGetQuestions();
+  const { getQuestions } = useGetQuestions();
+
   const onClickkakaoButton = () => {
     window.location.replace(KAKAO_BUTTON_URL);
   };
 
-  const onClickParentButton = (e) => {
+  const onClickParentButton = (e: any) => {
     getQuestions(e.target.value);
   };
 
   const getScore = () => {
     console.log(scoreService.getScore());
   };
+
   return (
     <>
+      {/* <p>auth : {authstate}</p> */}
       <Button
         children="zz 로그인"
-        onClick={() => loginFn("testt")}
+        onClick={() => ""}
         variant="kakao"
         size="medium"
         isLoading={false}
@@ -73,20 +75,7 @@ export default function Root() {
       <Typography variant="question" size="large">
         부모님 <br /> 얼마나 알고 계신가요?
       </Typography>
-      <div>
-        <Input variant="default" size="small" />
-      </div>
-      <div>
-        <Input
-          variant="default"
-          size="medium"
-          placeholder="안녕하세요"
-          type="datetime-local"
-        />
-      </div>
-      <div>
-        <Input variant="default" size="large" type="password" />
-      </div>
+      <Input type="text" size="large" variant="default" />
     </>
   );
 }

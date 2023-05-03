@@ -1,8 +1,8 @@
 steps:
-  # - name: node
-  #   entrypoint: yarn
-  #   id: install
-  #   args: ["install"]
+  - name: node
+    entrypoint: yarn
+    id: install
+    args: ["install"]
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: bash
     id: envsubst
@@ -12,7 +12,7 @@ steps:
       - 'VITE_APP_API_HOST=${_VITE_APP_API_HOST}'
     args:
       - '-c'
-      - 'apt-get update && apt-get install -y gettext-base && touch .env && envsubst < .env.template > .env'
+      - 'apt-get update && apt-get install -y gettext-base && touch .env && envsubst < .env.template > .env && cat .env'
   - name: node
     entrypoint: yarn
     args: ["run", "build"]

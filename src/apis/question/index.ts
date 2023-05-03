@@ -1,9 +1,18 @@
 import fetcher from "../fecther";
 
-const question = async (parentType: string) => {
-  const { data } = await fetcher.get(`/question?parentType=${parentType}`);
+type Question = [];
 
-  return data;
+const question = async (parentType: string) => {
+  try {
+    const { data } = await fetcher.get<ResponseContainer<Question>>(
+      `/question?parentType=${parentType}`,
+    );
+    console.log("api", data);
+    if (data.code !== 200) throw new Error(data.message);
+    return data.data;
+  } catch (e) {
+    throw Error("Unknown Error");
+  }
 };
 
 export default {

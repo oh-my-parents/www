@@ -9,9 +9,14 @@ const login = async (payload: kakaoPayload) => {
     expiresIn: payload.expires_in,
     refreshTokenExpiresIn: payload.refresh_token_expires_in,
   };
-  const { data } = await fetcher.post<Auth>("/auth/login", requsetData);
+  const { data } = await fetcher.post<ResponseContainer<Auth>>(
+    "/auth/login",
+    requsetData,
+  );
 
-  return data;
+  if (data.code !== 200) throw new Error(data.message);
+
+  return data.data;
 };
 
 const kakaoLogin = async (code: string) => {

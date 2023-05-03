@@ -1,16 +1,22 @@
-.img{
-    &.small {
-        width: 20px;
-        height: 20px;
-    }
+.img {
+  &.small {
+    width: 18px;
+    height: 18px;
+  }
 
-    &.medium {
-        width: 32px;
-        height: 32px;
-    }
+  &.medium {
+    width: 32px;
+    height: 32px;
+  }
 
-    &.large {
-        width: 44px;
-        height: 44px;
-    }
+  &.large {
+    width: 44px;
+    height: 44px;
+  }
+
+  &.kakao {
+    position: relative;
+    top: 2px;
+    padding-right: 4px;
+  }
 }

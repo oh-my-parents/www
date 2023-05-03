@@ -3,8 +3,8 @@ import cn from "classnames";
 import $ from "./typography.module.scss";
 
 type Props = React.HTMLAttributes<HTMLParagraphElement> & {
-  variant: "question | logo";
-  size: "small" | "medium" | "large";
+  variant: string;
+  size: string;
 };
 
 function Typography({ children, variant, size }: Props) {

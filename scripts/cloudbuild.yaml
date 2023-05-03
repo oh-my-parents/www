@@ -1,0 +1,23 @@
+steps:
+  - name: node
+    entrypoint: yarn
+    id: install
+    args: ["install"]
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: bash
+    id: envsubst
+    env:
+      - 'VITE_APP_HOST=${_VITE_APP_HOST}'
+      - 'VITE_APP_KAKAO_API_KEY=${_VITE_APP_KAKAO_API_KEY}'
+      - 'VITE_APP_API_HOST=${_VITE_APP_API_HOST}'
+    args:
+      - '-c'
+      - 'apt-get update && apt-get install -y gettext-base && touch .env && envsubst < .env.template > .env && cat .env'
+  - name: node
+    entrypoint: yarn
+    args: ["run", "build"]
+    waitFor:
+      # - install
+      - envsubst
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['rsync', '-r', 'dist/', 'gs://${_GCS_BUCKET_NAME}']

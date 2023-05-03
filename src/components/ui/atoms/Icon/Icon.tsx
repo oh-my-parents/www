@@ -4,7 +4,7 @@ import $ from "./icon.module.scss";
 type Props = {
   src: string;
   size: "small" | "medium" | "large";
-  variant: string;
+  variant: "kakao" | "main" | "logo" | "default";
 };
 
 function Icon({ src, size, variant }: Props) {

@@ -3,11 +3,9 @@ import cn from "classnames";
 import $ from "./button.module.scss";
 import IsLoadingComponent from "./IsLoading.tsx";
 
-type Props = {
-  children?: JSX.Element | JSX.Element[] | string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  size: string;
-  variant: string;
+type Props = React.HTMLAttributes<HTMLButtonElement> & {
+  size: "small" | "medium" | "large";
+  variant: "kakao" | "music" | "default";
   isLoading?: Boolean;
   value?: string;
 };

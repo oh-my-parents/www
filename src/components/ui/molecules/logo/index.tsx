@@ -1,8 +1,8 @@
 import Typography from "../../atoms/Typography/Typography";
 
 type Props = {
-  size: string;
-  variant: string;
+  size: "small" | "medium" | "large";
+  variant: "kakao" | "main" | "logo" | "default";
 };
 
 export default function Logo({ size, variant }: Props) {

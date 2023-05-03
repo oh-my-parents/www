@@ -2,6 +2,7 @@ import React from "react";
 import cn from "classnames";
 import $ from "./button.module.scss";
 import IsLoadingComponent from "./IsLoading.tsx";
+import kakaoTalk from "/public/images/kakaotalk.svg";
 
 type Props = {
   children: string;

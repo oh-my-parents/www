@@ -22,60 +22,63 @@ export default function Root() {
 
   return (
     <>
-      {/* <p>auth : {authstate}</p> */}
-      <Button
-        children="zz 로그인"
-        onClick={() => ""}
-        variant="kakao"
-        size="medium"
-        isLoading={false}
-      />
-      <Button
-        children="카카오톡으로 로그인"
-        onClick={onClickkakaoButton}
-        variant="kakao"
-        size="medium"
-        isLoading={false}
-      />
-      <Button
-        children="언제더라.."
-        onClick={onClickParentButton}
-        variant="answer"
-        size="large"
-        value="mother"
-        isLoading={false}
-      />
-      <Button
-        children="이전"
-        onClick={getScore}
-        size="small"
-        variant="before"
-        isLoading={false}
-      />
-      <Button
-        children="다음"
-        onClick={() => ""}
-        size="small"
-        variant="next"
-        isLoading={false}
-      />
-      <Button
-        children="다음"
-        onClick={() => ""}
-        size="small"
-        variant="next"
-        isLoading={true}
-      />
-      <Typography variant="question" size="small">
-        부모님 <br /> 얼마나 알고 계신가요?
-      </Typography>
-      <Typography variant="question" size="medium">
-        부모님 <br /> 얼마나 알고 계신가요?
-      </Typography>
-      <Typography variant="question" size="large">
-        부모님 <br /> 얼마나 알고 계신가요?
-      </Typography>
-      <Input type="text" size="large" variant="default" />
+      <div
+        style={{
+          margin: "0 auto 0 auto",
+          paddingTop: "10vh",
+          justifyContent: "center",
+          flexDirection: "column",
+          width: "80vw",
+          gap: "16px",
+        }}
+      >
+        <div
+          style={{
+            background: "#ffffff20",
+            display: "flex",
+            flexDirection: "row",
+            marginTop: "6vh",
+          }}
+        />
+        <h1
+          style={{
+            textAlign: "center",
+            // background: "linear(-45deg, #ffffff, #000000)",
+            color: "white",
+            fontSize: "24px",
+            letterSpacing: "-1.8px",
+          }}
+        >
+          Oh my parents
+        </h1>
+        <h2
+          style={{
+            margin: "0",
+            color: "linear(-45deg, #ffffff, #ffffff00)",
+            width: "100%",
+            textAlign: "center",
+            fontSize: "56px",
+            padding: "16px 8px 16px 8px ",
+            letterSpacing: "-4px",
+            fontWeight: "border",
+            fontFamily: "Pretendard Variable",
+          }}
+        >
+          <span style={{ display: "block" }}>당신의 부모님,</span>
+          <span style={{ display: "block" }}>어디까지</span>
+          <span style={{ display: "block" }}>알고 있나요?</span>
+        </h2>
+        <div
+          style={{ background: "#24FF0030", width: "100%", height: "8vh" }}
+        />
+        <Button
+          children="카카오톡으로 시작하기"
+          onClick={onClickkakaoButton}
+          variant="kakao"
+          size="medium"
+          isLoading={false}
+        />
+      </div>
     </>
   );
 }

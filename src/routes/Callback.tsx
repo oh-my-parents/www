@@ -9,7 +9,7 @@ const Callback = () => {
 
   useEffect(() => {
     authService.login(code!);
-    navigate("/root");
+    navigate("/");
     return () => {};
   }, [code]);
 

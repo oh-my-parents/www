@@ -1,5 +1,10 @@
-html{
-  font-family: 'sf pro display', 'sf pro icons', 'helvetica neue', helvetica, arial, sans-serif;
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+html {
+  font-family: "sf pro display", "sf pro icons", "helvetica neue", helvetica,
+    arial, sans-serif;
+}
+* {
+  font-family: "Pretenard";
 }
 body {
   margin: 0px;
@@ -7,11 +12,16 @@ body {
   overflow: auto;
 }
 
+p,
+a {
+  margin: 0;
+}
+
 #root {
   margin: 0px;
   padding: 0px;
   overflow: auto;
-  background: linear-gradient(324deg,#5d49ab, 52%, #EA98BE);
+  background: linear-gradient(324deg, #5d49ab, 52%, #ea98be);
   height: 100vh;
   /* background-size: 200% 200%; */
   /* animation: Gradient 16s ease infinite; */
@@ -29,14 +39,13 @@ body {
   }
 }
 
-
-h2{
+h2 {
   background: -webkit-linear-gradient(#ffffff 60%, #ffffff10);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
 
-h2 span{
+h2 span {
   line-height: 1.2;
 }

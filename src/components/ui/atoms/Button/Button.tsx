@@ -2,13 +2,10 @@ import React from "react";
 import cn from "classnames";
 import $ from "./button.module.scss";
 import IsLoadingComponent from "./IsLoading.tsx";
-import kakaoTalk from "/public/images/kakaotalk.svg";
 
-type Props = {
-  children: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  size: string;
-  variant: "kakao" | "answer" | "before" | "next";
+type Props = React.HTMLAttributes<HTMLButtonElement> & {
+  size: "small" | "medium" | "large";
+  variant: "kakao" | "music" | "default";
   isLoading?: Boolean;
   value?: string;
 };

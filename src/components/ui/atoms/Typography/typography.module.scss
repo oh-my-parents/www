@@ -13,10 +13,35 @@
   }
 
   &.medium {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   &.large {
-    font-size: 28px;
+    font-size: 50px;
+  }
+
+  &.kakao {
+    display: inline;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    color: #00000085;
+  }
+
+  &.main {
+    background: linear-gradient(#ffffff, #ffffff90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: -4px;
+    font-weight: 800;
+  }
+
+  &.logo {
+    color: white;
+    font-weight: 700;
+    letter-spacing: -2.5px;
+    text-align: center;
   }
 }

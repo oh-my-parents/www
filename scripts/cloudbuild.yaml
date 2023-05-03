@@ -10,7 +10,7 @@ steps:
       - 'VITE_APP_KAKAO_API_KEY=$_VITE_APP_KAKAO_API_KEY'
       - 'VITE_APP_API_HOST=$_VITE_APP_API_HOST'
     args: 
-      - '< .env.template > .env && cat .env'
+      - 'envsubst < .env.template > .env && cat .env'
   - name: node
     entrypoint: yarn
     args: ["run", "build"]

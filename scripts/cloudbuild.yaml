@@ -20,4 +20,4 @@ steps:
       # - install
       - envsubst
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['cp', '-r', 'dist/**', 'gs://${_GCS_BUCKET_NAME}']
+    args: ['rsync', '-r', 'dist/', 'gs://${_GCS_BUCKET_NAME}']

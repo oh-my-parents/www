@@ -3,12 +3,12 @@ steps:
     entrypoint: yarn
     id: install
     args: ["install"]
-  - name: 'ubuntu'
+  - name: "gcr.io/cloud-builders/${PROJECT_ID}/envsubst"
     id: envsubst
     env:
-      - 'VITE_APP_HOST=$_VITE_APP_HOST'
-      - 'VITE_APP_KAKAO_API_KEY=$_VITE_APP_KAKAO_API_KEY'
-      - 'VITE_APP_API_HOST=$_VITE_APP_API_HOST'
+      - 'VITE_APP_HOST=${_VITE_APP_HOST}'
+      - 'VITE_APP_KAKAO_API_KEY=${_VITE_APP_KAKAO_API_KEY}'
+      - 'VITE_APP_API_HOST=${_VITE_APP_API_HOST}'
     args: 
       - 'envsubst < .env.template > .env && cat .env'
   - name: node

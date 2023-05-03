@@ -1,0 +1,19 @@
+steps:
+  - name: node
+    entrypoint: yarn
+    id: install
+    args: ["install"]
+  - name: 'gcr.io/cloud-builder/envsubst'
+    id: envsubst
+    args: 
+      - '< .env.template > .env'
+    env:
+      - 'VITE_APP_HOST=$VITE_APP_HOST'
+      - 'VITE_APP_KAKAO_API_KEY=$VITE_APP_KAKAO_API_KEY'
+      - 'VITE_APP_API_HOST=$VITE_APP_API_HOST'
+  - name: node
+    entrypoint: yarn
+    args: ["run", "build"]
+    waitFor:
+      - install
+      - envsubst

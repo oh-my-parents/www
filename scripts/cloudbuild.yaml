@@ -1,9 +1,9 @@
 steps:
-  - name: node
-    entrypoint: yarn
-    id: install
-    args: ["install"]
-  - name: "gcr.io/cloud-builders/${PROJECT_ID}/envsubst"
+  # - name: node
+  #   entrypoint: yarn
+  #   id: install
+  #   args: ["install"]
+  - name: bash
     id: envsubst
     env:
       - 'VITE_APP_HOST=${_VITE_APP_HOST}'
@@ -15,5 +15,5 @@ steps:
     entrypoint: yarn
     args: ["run", "build"]
     waitFor:
-      - install
+      # - install
       - envsubst

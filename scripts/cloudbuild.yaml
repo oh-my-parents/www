@@ -19,3 +19,5 @@ steps:
     waitFor:
       # - install
       - envsubst
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['cp', '-r', 'dist/**', 'gs://${_GCS_BUCKET_NAME}']

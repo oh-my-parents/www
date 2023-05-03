@@ -9,8 +9,10 @@ steps:
       - 'VITE_APP_HOST=${_VITE_APP_HOST}'
       - 'VITE_APP_KAKAO_API_KEY=${_VITE_APP_KAKAO_API_KEY}'
       - 'VITE_APP_API_HOST=${_VITE_APP_API_HOST}'
-    args: 
-      - 'envsubst < .env.template > .env && cat .env'
+    args: [
+        "-c",
+        "touch .env && envsubst < .env.template > .env"
+        ]
   - name: node
     entrypoint: yarn
     args: ["run", "build"]

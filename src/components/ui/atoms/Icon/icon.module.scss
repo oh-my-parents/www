@@ -1,4 +1,6 @@
 .img {
+  position: relative;
+  top: 3px;
   &.small {
     width: 18px;
     height: 18px;
@@ -15,7 +17,6 @@
   }
 
   &.kakao {
-    position: relative;
     top: 2px;
     padding-right: 4px;
   }

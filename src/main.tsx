@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Sample from "./routes/sample";
+import Sample from "./routes/Sammple";
 import Callback from "./routes/Callback";
 import Main from "./routes/main";
 import { RecoilRoot } from "recoil";
+import Problem, { ProblemID } from "./routes/Problem";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,16 @@ const router = createBrowserRouter([
   {
     path: "/oauth",
     element: <Callback />,
+  },
+  {
+    path: "/problem/*",
+    element: <Problem />,
+    children: [
+      {
+        path: ":id",
+        element: <ProblemID />,
+      },
+    ],
   },
 ]);
 

@@ -1,14 +1,16 @@
-import Typography from "../../atoms/Typography/Typography";
+import { Link } from "react-router-dom";
+import cn from "classnames";
+import $ from "./index.module.scss";
 
-type Props = {
+type Props = React.HTMLAttributes<HTMLParagraphElement> & {
   size: "small" | "medium" | "large";
-  variant: "kakao" | "main" | "logo" | "default";
+  variant: "plain" | "gradient";
 };
 
-export default function Logo({ size, variant }: Props) {
+export default function Logo({ children, size, variant }: Props) {
   return (
-    <Typography size={size} variant={variant}>
-      Oh my parents
-    </Typography>
+    <Link className={cn($.a, $[size], $[variant])} to={"/"}>
+      {children}
+    </Link>
   );
 }

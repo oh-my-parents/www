@@ -1,13 +1,10 @@
 import { useEffect } from "react";
 import Button from "@/components/ui/atoms/Button/Button";
 import useGetQuestions from "@/hooks/useGetQuestions";
-import { Navigate, Outlet, useNavigate, useParams } from "react-router-dom";
-import { Question } from "@/utils/recoil/atom";
-import { useSetRecoilState } from "recoil";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
+import ProblemNavigation from "@/components/ui/organism/ProblemNavigation";
 
-type Props = {};
-
-const Problem = (props: Props) => {
+const Problem = () => {
   const { questions, getQuestions } = useGetQuestions();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -20,7 +17,6 @@ const Problem = (props: Props) => {
     if (questions.length !== 0) {
       navigate("/problem/1");
     }
-    console.log("id,", id);
   }, [questions]);
 
   if (!id) {
@@ -45,15 +41,19 @@ const Problem = (props: Props) => {
       </div>
     );
   }
-
+  const onClickBackButton = () => {
+    if (Number(id) === 1) {
+      navigate("/");
+    } else {
+      navigate(`/problem/${Number(id) - 1}`);
+    }
+  };
   return (
     <div>
-      <div>
-        <p>문제 페이지들의 헤더영역</p>
-        <button onClick={() => navigate(`/problem/${Number(id) + 1}`)}>
-          다음
-        </button>
-      </div>
+      <ProblemNavigation
+        onClickLogo={() => navigate("/")}
+        onClickLeft={onClickBackButton}
+      />
       <Outlet />
     </div>
   );

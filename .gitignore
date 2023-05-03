@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# only open template of env
+.env
+.env.*
+!*.env.template
+

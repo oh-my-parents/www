@@ -9,7 +9,6 @@ const login = async (code: string) => {
     authManager.setAuth(token);
     return true;
   } catch (e) {
-    // error logging
     return false;
   }
 };

@@ -5,7 +5,7 @@ const getQuestions = async (parentType: parentType) => {
     const questions = await questionApi.question(parentType);
     return questions;
   } catch (e) {
-    return false;
+    throw e;
   }
 };
 

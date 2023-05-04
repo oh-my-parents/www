@@ -1,13 +1,15 @@
 import Typography from "@/components/ui/atoms/Typography/Typography";
 import KakaoButton from "@/components/ui/molecules/KakaoButton";
 import $ from "./mainItems.module.scss";
-import FlexButtons from "../../molecules/FlexButtons";
+import ToggleButton from "../../molecules/ToogleButton";
 import Logo from "../../molecules/Logo";
 
 export default function MainItems() {
   return (
     <div className={$.mainLayout}>
-      <FlexButtons />
+      <div className={$.musicButtonContainer}>
+        <ToggleButton isOn={false} onToggle={() => {}} />
+      </div>
       <Logo size="medium" variant="plain">
         Oh my parents
       </Logo>

@@ -1,0 +1,94 @@
+.container{
+  /* card */
+  padding: 8px;
+  background: #FFFFFF;
+  box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  .header{
+    line-height: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cardIndex{
+    line-height: none;
+
+    .current{
+      line-height: inherit;
+      line-height: 36px;
+      color: #FFC700;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #000000;
+
+    }
+    .length{
+      line-height: inherit;
+      color: #BDBDBD;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.07em;
+      text-align: center;
+      color: #757575;
+
+      &::before{
+        content: "";
+        display: inline-block;
+        position: relative;  
+        width: 2px;
+        height: 18px;
+        transform: rotate(15deg);
+        border-radius: 4px;
+        margin: 0 4px;
+        // transform: translateX(-50%);
+        background-color: #757575;
+      }
+    }
+  }
+
+  .body{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    text-align: left;
+    white-space: pre-line;
+    word-break: keep-all;
+    padding: 8px 0;
+
+  }
+  .footer{
+    display: flex;
+    font-size: 24px !important;
+    justify-content: end;
+  }
+
+
+  .jokeText{
+    color: #A6A6A6;
+    font-size: 6px !important;
+    font-weight: 600;
+    line-height: 7px;
+  }
+
+  .shillig{
+    color: #FFC700;
+    font-size: 48px !important;
+    font-weight: 900;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0em;
+    position: relative;
+    transform: translateY(-100%);
+    
+  }
+
+  .helperText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+}

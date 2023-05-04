@@ -7,8 +7,12 @@ type Props = React.HTMLAttributes<HTMLParagraphElement> & {
   variant: "kakao" | "main" | "logo" | "default" | "mainLogo";
 };
 
-function Typography({ children, variant, size }: Props) {
-  return <p className={cn($.p, $[variant], $[size])}>{children}</p>;
+function Typography({ children, variant, size, className, ...props }: Props) {
+  return (
+    <p className={cn($.p, $[variant], $[size], className)} {...props}>
+      {children}
+    </p>
+  );
 }
 
 export default Typography;

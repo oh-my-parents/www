@@ -5,7 +5,10 @@ import Modal from "./Modal";
 import { useState } from "react";
 
 export default function DropDown() {
-  const age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const age = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5,
+    6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+  ];
   const [click, setClick] = useState(1);
   const [state, setState] = useState(false);
 

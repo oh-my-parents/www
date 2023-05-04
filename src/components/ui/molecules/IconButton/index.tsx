@@ -6,7 +6,7 @@ type Props = React.HTMLAttributes<HTMLButtonElement> & {
   iconSize: "small" | "medium" | "large";
   buttonSize: "small" | "medium" | "large";
   iconVariant: "kakao" | "main" | "logo" | "default" | "music";
-  buttonVariant: "kakao" | "music" | "arrow" | "default";
+  buttonVariant: "kakao" | "music" | "arrow" | "answer";
 };
 
 export default function IconButton({

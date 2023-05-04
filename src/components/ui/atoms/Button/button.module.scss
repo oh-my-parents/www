@@ -8,7 +8,7 @@
   }
 
   &.medium {
-    padding: 14px 36px;
+    padding: 15px 36px;
   }
 
   &.large {
@@ -32,9 +32,15 @@
     - answer.tsx
   */
   &.answer {
-    border: 1px solid #5a5a5a;
+    border: 1px solid hsl(0, 0%, 75%);
+    background-color: #EBEBEB;
     width: 80vw;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
+    &:hover {
+      color: white;
+      background:  linear-gradient(180deg, #6A5FE8 0%, #000000 316.67%)
+    }
   }
 
   /*
@@ -69,4 +75,6 @@
     height: 28px;
     padding: 0;
   }
+
+
 }

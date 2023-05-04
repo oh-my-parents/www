@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import Button from "@/components/ui/atoms/Button/Button";
 import useGetQuestions from "@/hooks/useGetQuestions";
-import { Outlet, useNavigate, useParams } from "react-router-dom";
-import ProblemNavigation from "@/components/ui/organism/ProblemNavigation";
+import { useNavigate, useParams } from "react-router-dom";
+import ProblemLayout from "@/components/ui/template/ProblemLayout";
 
 const Problem = () => {
   const { questions, getQuestions } = useGetQuestions();
@@ -41,21 +41,11 @@ const Problem = () => {
       </div>
     );
   }
-  const onClickBackButton = () => {
-    if (Number(id) === 1) {
-      navigate("/");
-    } else {
-      navigate(`/problem/${Number(id) - 1}`);
-    }
-  };
+
   return (
-    <div>
-      <ProblemNavigation
-        onClickLogo={() => navigate("/")}
-        onClickLeft={onClickBackButton}
-      />
-      <Outlet />
-    </div>
+    <>
+      <ProblemLayout pageNumber={id} />
+    </>
   );
 };
 

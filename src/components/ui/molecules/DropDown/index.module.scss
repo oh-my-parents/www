@@ -30,10 +30,22 @@
     height: 40vh;
     overflow-y: scroll;
     z-index: 999;
-    border-radius: 0 0 10px 10px;
-    &::-webkit-scrollbar {
-        display: none;
+    border-radius: 10px;
+
+    &::-webkit-scrollbar{
+        background-color: #cdcccc;
+        width: 6px;
+        height: 6px;
+        border-radius: 10px;
+       
+    } 
+
+    &::-webkit-scrollbar-thumb{
+        background-color: #5d49ab;
+        border-radius: 10px;
+        height:12px;
     }
+    
     .dropDownModal {
         padding: 14px 0;
         background-color: #F0F0F0;

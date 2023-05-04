@@ -1,0 +1,33 @@
+.question-container{
+  width: 240px;
+  margin: 20px auto;
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .body{
+    width: 200px;
+  }
+ 
+}
+
+.answerCard{
+  width: 200px;
+  height: 166px;
+  margin: 0 auto;
+  margin-top: 200px;
+  text-align: center;
+  .body{
+    text-align: center;
+  }
+
+  .helperText{
+    padding: 4px 0;
+  }
+  
+  .jokeText{
+    position: relative;
+    bottom: 0;
+  }
+}

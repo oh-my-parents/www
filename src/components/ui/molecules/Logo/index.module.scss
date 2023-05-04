@@ -1,0 +1,29 @@
+.a {
+    &.small {
+        font-size: 16px;
+      }
+    
+    &.medium {
+    font-size: 24px;
+    }
+
+    &.large {
+    font-size: 50px;
+    }
+
+    &.plain {
+    color: white;
+    font-weight: 700;
+    letter-spacing: -2.5px;
+    text-align: center;
+    text-decoration: none;
+    }
+
+    &.gradient {
+    background: linear-gradient(90deg,#EA98BE, #5149AB);
+    font-weight: 900;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+    }
+}

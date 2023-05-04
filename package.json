@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "lint-fix": "eslint '**/*.{ts,tsx}' --ext .ts, .tsx --fix",
-    "lint-staged": "lint-staged"
+    "lint-staged": "yarn type-check && lint-staged",
+    "type-check": "tsc --project ./tsconfig.json --noEmit"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [

@@ -5,7 +5,7 @@ import IsLoadingComponent from "./IsLoading.tsx";
 
 type Props = React.HTMLAttributes<HTMLButtonElement> & {
   size: "small" | "medium" | "large";
-  variant: "kakao" | "music" | "default";
+  variant: "kakao" | "music" | "arrow" | "default";
   isLoading?: Boolean;
   value?: string;
 };

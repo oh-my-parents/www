@@ -6,3 +6,13 @@
   gap: 6vh;
   align-items: center;
 }
+
+.musicButtonContainer{ 
+  margin: 0;
+  display: flex;
+  border: 1px solid red;
+  align-items: flex-end;
+  gap: 6px;
+  justify-content: flex-end;
+  width: 100%;
+}

@@ -1,0 +1,59 @@
+.switch{
+  display: inline-block;
+  width: 54px;
+  height: 24px;
+  border-radius: 12px;
+  .round{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  .round{
+    left: 0;
+    right: 0;
+    top: 0%;
+    bottom: 0%;
+    background: #545454;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px 0px #161B1D3B;
+    box-shadow: -2px -2px 10px 0px #FAFBFF66;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      left: 1px;
+      top: 1px;
+      background: #e8e8e8;
+      box-shadow: 2px 2px 5px 0px #FFFFFF inset;
+      box-shadow: 0px 4px 4px 0px #00000040;
+      border-radius: 50%;
+      transition: 0.2s;
+      transition: ease-in 0.2s;
+    }
+  }
+  input:checked{
+    + .round{
+      right: 0;
+      top: 0%;
+      bottom: 0%;
+      background: #E9E9E9;
+      border-radius: 12px;
+      
+      &:before{
+        content: '';
+        position: absolute;
+        left: 31px;
+        right: 1px;
+        top: 1px;
+        border-radius: 50%;
+        transition: 0.2s;
+      }
+    }
+  }
+  input{
+    display: none;
+  }
+  
+}

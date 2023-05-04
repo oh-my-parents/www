@@ -8,11 +8,7 @@
 }
 
 .musicButtonContainer{ 
-  margin: 0;
   display: flex;
-  border: 1px solid red;
-  align-items: flex-end;
-  gap: 6px;
-  justify-content: flex-end;
+  justify-content: end;
   width: 100%;
 }

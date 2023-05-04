@@ -1,0 +1,46 @@
+.dropDown {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    .dropDownBody {
+    padding: 14px 0;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 4px;
+    strong {
+        flex-grow: 1;
+    }
+    img {
+        position: absolute;
+        text-align: right;
+        right:16px;
+        top: 16px;
+    }
+    }
+}
+
+.dropDownModalDiv{
+    width: 180px;
+    position: absolute;
+    margin-top: 54px;
+    height: 40vh;
+    overflow-y: scroll;
+    z-index: 999;
+    border-radius: 0 0 10px 10px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .dropDownModal {
+        padding: 14px 0;
+        background-color: #F0F0F0;
+        text-align: center;
+        align-items: center;
+        &:hover{
+            background-color: #cdcccc;
+        }
+    }
+}

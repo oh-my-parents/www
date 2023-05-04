@@ -2,7 +2,7 @@ import { Question } from "@/utils/recoil/atom";
 import { useNavigate, useParams } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import SelectAnswer from "@/components/ui/organism/SelectAnswer";
-
+import DropDown from "@/components/ui/molecules/DropDown";
 const sample = ["오늘", "지난주", "지난달", "언제더라..."];
 
 const ProblemDetailPages = () => {
@@ -13,9 +13,10 @@ const ProblemDetailPages = () => {
   const onClickAnswer = () => {
     navigate(`/problem/${Number(id) + 1}`);
   };
+
   return (
     <div>
-      <div>여기는 카드 자리입니다</div>
+      <DropDown />
       <SelectAnswer onClick={onClickAnswer} array={sample} />
       <h2>{currnetQuestion}</h2>
     </div>

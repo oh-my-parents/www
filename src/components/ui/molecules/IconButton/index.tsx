@@ -5,7 +5,7 @@ type Props = React.HTMLAttributes<HTMLButtonElement> & {
   src: string;
   iconSize: "small" | "medium" | "large";
   buttonSize: "small" | "medium" | "large";
-  iconVariant: "kakao" | "main" | "logo" | "default" | "music";
+  iconVariant: "kakao" | "main" | "logo" | "default" | "music" | "parents";
   buttonVariant: "kakao" | "music" | "arrow" | "answer";
 };
 

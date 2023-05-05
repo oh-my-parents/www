@@ -12,10 +12,6 @@ export default function ProblemLayout({ pageNumber }: Props) {
   const navigate = useNavigate();
   const setQuestion = useSetRecoilState(Question);
 
-  const onClickLogo = () => {
-    navigate("/");
-  };
-
   const onClickBackButton = () => {
     if (Number(pageNumber) === 1) {
       navigate("/problem");
@@ -28,10 +24,7 @@ export default function ProblemLayout({ pageNumber }: Props) {
   return (
     <div className={$.problemLayout}>
       <div className={$.problemLayoutBody}>
-        <ProblemNavigation
-          onClickLogo={onClickLogo}
-          onClickLeft={onClickBackButton}
-        />
+        <ProblemNavigation onClickLeft={onClickBackButton} />
         <Outlet />
       </div>
     </div>

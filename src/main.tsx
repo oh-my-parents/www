@@ -10,6 +10,8 @@ import Problem, { ProblemID } from "./routes/Problem";
 import { SEO as SEO_TEXT } from "@/constants/text.json";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "./components/SEO";
+import ShareLayout from "./components/ui/template/ShareLayout";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
         element: <ProblemID />,
       },
     ],
+  },
+  {
+    path: "/share",
+    element: <ShareLayout />,
   },
 ]);
 

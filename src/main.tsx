@@ -7,6 +7,7 @@ import Callback from "./routes/Callback";
 import Main from "./routes/main";
 import { RecoilRoot } from "recoil";
 import Problem, { ProblemID } from "./routes/Problem";
+import ShareLayout from "./components/ui/template/ShareLayout";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         element: <ProblemID />,
       },
     ],
+  },
+  {
+    path: "/share",
+    element: <ShareLayout />,
   },
 ]);
 

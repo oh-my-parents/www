@@ -5,11 +5,7 @@ import arrowRight from "/images/arrowRight.svg";
 import Logo from "../../molecules/Logo";
 import cn from "classnames";
 
-export default function ProblemNavigation({
-  onClickLogo,
-  onClickLeft,
-  className,
-}: any) {
+export default function ProblemNavigation({ onClickLeft, className }: any) {
   return (
     <div className={cn($.problemNavigation, className)}>
       <IconButton
@@ -21,7 +17,7 @@ export default function ProblemNavigation({
         buttonSize="small"
       />
 
-      <Logo onClick={onClickLogo} size="medium" variant="gradient">
+      <Logo size="medium" variant="gradient">
         Oh my parents
       </Logo>
       <IconButton

@@ -10,14 +10,28 @@ type Props = React.HTMLAttributes<HTMLButtonElement> & {
   value?: string;
 };
 
-function Button({ children, onClick, size, variant, isLoading, value }: Props) {
+function Button({
+  children,
+  onClick,
+  size,
+  variant,
+  isLoading,
+  value,
+  className,
+}: Props) {
   return (
     <button
       type="button"
       value={value}
-      className={cn($.button, $[variant], $[size], {
-        [$.isLoading]: isLoading,
-      })}
+      className={cn(
+        $.button,
+        $[variant],
+        $[size],
+        {
+          [$.isLoading]: isLoading,
+        },
+        className,
+      )}
       onClick={onClick}
     >
       {!isLoading ? children : <IsLoadingComponent />}

@@ -10,15 +10,15 @@ const Problem = () => {
   const { questions, getQuestions } = useGetQuestions();
   const navigate = useNavigate();
   const { id } = useParams();
-  const setQuestion = useSetRecoilState(Parents);
+  const setParents = useSetRecoilState(Parents);
 
   const onClickMotherButton = () => {
     getQuestions("MOTHER");
-    setQuestion("MOTHER");
+    setParents("MOTHER");
   };
   const onClickFatherButton = () => {
     getQuestions("FATHER");
-    setQuestion("FATHER");
+    setParents("FATHER");
   };
 
   useEffect(() => {

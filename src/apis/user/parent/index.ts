@@ -16,12 +16,11 @@ const getAnswer = async (requstData: GetChildAnswerRequest) => {
 };
 
 const submitAnswer = async (requestData: ParentAnswerRequest) => {
-  const response = await fetcher.post<ParentAnswerResponse>(
+  const { data } = await fetcher.post<ParentAnswerResponse>(
     "/user/parent/answer",
     requestData,
   );
-  console.log(response);
-  return response.data;
+  return data.data;
 };
 
 export default {

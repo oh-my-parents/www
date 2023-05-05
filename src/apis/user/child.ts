@@ -1,9 +1,5 @@
 import fetcher from "../fecther";
-
-type UserAnswerRequest = {
-  parentType: string;
-  userChildAnswer: { number: number; answer: string }[];
-};
+import { UserAnswerRequest } from "./type";
 
 const submitAnswer = async (requestData: UserAnswerRequest) => {
   try {

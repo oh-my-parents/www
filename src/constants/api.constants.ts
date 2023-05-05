@@ -5,7 +5,7 @@ const VERSION = "v1";
 
 export const BASE_URL = `${API_HOST}/${PREFIX}/${VERSION}`;
 export const DEFAULT_TIME_OUT = 10_000;
-export const AUTH_REQUIRED_REGEX_LIST: RegExp[] = [/users/];
+export const AUTH_REQUIRED_REGEX_LIST: RegExp[] = [/users/, /question/];
 
 export const KAKAO = Object.freeze({
   OAUTH_HOST: "https://kauth.kakao.com",

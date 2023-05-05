@@ -10,12 +10,24 @@ type Props = React.HTMLAttributes<HTMLInputElement> & {
   type?: HTMLInputTypeAttribute | undefined;
 };
 
-function Input({ value, size, variant, disabled, type, ...props }: Props) {
+function Input({
+  value,
+  onChange,
+  size,
+  variant,
+  disabled,
+  type,
+  className,
+  ...props
+}: Props) {
   return (
     <input
       type={type}
       value={value}
-      className={cn($.input, $[variant], $[size], { [$.disabled]: disabled })}
+      onChange={onChange}
+      className={cn(className, $.input, $[variant], $[size], {
+        [$.disabled]: disabled,
+      })}
       {...props}
     />
   );

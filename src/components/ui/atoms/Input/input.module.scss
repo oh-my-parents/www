@@ -10,12 +10,12 @@
   }
 
   &.default {
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    color: #495057;
-    font-size: 1rem;
-    font-weight: 400;
+    background-color: #F0F0F0;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    line-height: 25px;
+    font-weight: 700;
   }
 
   /*
@@ -29,7 +29,7 @@
 
   &.medium {
     font-size: large;
-    padding: 12px 20px;
+    padding: 14px 20px;
   }
 
   &.large {

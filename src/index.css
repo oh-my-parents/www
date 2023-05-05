@@ -4,12 +4,13 @@ html {
     arial, sans-serif;
 }
 * {
-  font-family: "Pretenard";
+  font-family: "Pretendard";
 }
 body {
   margin: 0px;
   padding: 0px;
   overflow: auto;
+  margin: 0 auto;
 }
 
 p,

@@ -3,10 +3,15 @@ import IconButton from "../../molecules/IconButton";
 import arrowLeft from "/images/arrowLeft.svg";
 import arrowRight from "/images/arrowRight.svg";
 import Logo from "../../molecules/Logo";
+import cn from "classnames";
 
-export default function ProblemNavigation({ onClickLogo, onClickLeft }: any) {
+export default function ProblemNavigation({
+  onClickLogo,
+  onClickLeft,
+  className,
+}: any) {
   return (
-    <div className={$.problemNavigation}>
+    <div className={cn($.problemNavigation, className)}>
       <IconButton
         src={arrowLeft}
         onClick={onClickLeft}

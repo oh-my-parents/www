@@ -6,5 +6,6 @@ export type kakaoPayload = {
 };
 
 export type Auth = {
-  token: string;
+  accessToken: string;
+  grantType: "Bearer";
 };

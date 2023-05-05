@@ -28,7 +28,7 @@ fetcher.interceptors.request.use((config) => {
     ...config,
     headers: {
       ...config.headers,
-      Authorization: `bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   } as InternalAxiosRequestConfig<any>;
 

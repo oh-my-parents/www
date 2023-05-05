@@ -13,9 +13,13 @@ export default function Modal({ setState, setClick, array }: Props) {
   };
   return (
     <div className={$.dropDownModalDiv}>
-      {array.map((item) => {
+      {array.map((item, index) => {
         return (
-          <div onClick={() => onClickModal(item)} className={$.dropDownModal}>
+          <div
+            key={index}
+            onClick={() => onClickModal(item)}
+            className={$.dropDownModal}
+          >
             <strong>{item}</strong>
           </div>
         );

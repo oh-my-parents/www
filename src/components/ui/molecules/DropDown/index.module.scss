@@ -1,7 +1,10 @@
 .dropDown {
+    width: 75%;
     display: flex;
+    position: relative;
     flex-direction: column;
-    width: 180px;
+    padding: 0 20px;
+    margin:0 auto;
     .dropDownBody {
     padding: 14px 0;
     background-color: #F0F0F0;
@@ -24,10 +27,10 @@
 }
 
 .dropDownModalDiv{
-    width: 180px;
     position: absolute;
+    width: 85%;
     margin-top: 54px;
-    height: 40vh;
+    height: 30vh;
     overflow-y: scroll;
     z-index: 999;
     border-radius: 10px;

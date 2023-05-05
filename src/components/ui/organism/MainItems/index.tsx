@@ -1,20 +1,28 @@
 import Typography from "@/components/ui/atoms/Typography/Typography";
 import KakaoButton from "@/components/ui/molecules/KakaoButton";
 import $ from "./mainItems.module.scss";
-import ToggleButton from "../../molecules/ToogleButton";
+import cn from "classnames";
 import Logo from "../../molecules/Logo";
 import UserButton from "../../molecules/UserButton";
+import { AiOutlinePoweroff } from "react-icons/ai";
 // state
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { IsLogin } from "@/utils/recoil/atom";
 
 export default function MainItems() {
-  const isLogin = useRecoilValue(IsLogin);
+  const [isLogin, setIsLogin] = useRecoilState(IsLogin);
+
+  const onClickLogout = () => {
+    setIsLogin(false);
+  };
 
   return (
     <div className={$.mainLayout}>
-      <div className={$.musicButtonContainer}>
-        <ToggleButton isOn={false} onToggle={() => {}} />
+      <div className={$.logoutButton}>
+        <AiOutlinePoweroff
+          onClick={onClickLogout}
+          className={cn({ [$.logout]: !isLogin }, "drop-shadow")}
+        />
       </div>
       <Logo size="medium" variant="plain">
         Oh my parents

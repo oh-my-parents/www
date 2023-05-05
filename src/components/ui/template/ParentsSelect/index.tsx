@@ -17,6 +17,7 @@ export default function ParentsSelect({
   return (
     <div className={$.parentsSelect}>
       <ProblemNavigation
+        className={$.problemNavigation}
         onClickLogo={() => navigate("/")}
         onClickLeft={() => navigate("/")}
       />

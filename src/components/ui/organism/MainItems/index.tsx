@@ -3,7 +3,7 @@ import KakaoButton from "@/components/ui/molecules/KakaoButton";
 import $ from "./mainItems.module.scss";
 import ToggleButton from "../../molecules/ToogleButton";
 import Logo from "../../molecules/Logo";
-
+import UserButton from "../../molecules/UserButton";
 // state
 import { useRecoilValue } from "recoil";
 import { IsLogin } from "@/utils/recoil/atom";
@@ -22,7 +22,7 @@ export default function MainItems() {
       <Typography size="large" variant="main">
         당신의 부모님, <br /> 어디까지 <br /> 알고있나요?
       </Typography>
-      {isLogin ? <div>로그인 되었습니다.</div> : <KakaoButton />}
+      {isLogin ? <UserButton /> : <KakaoButton />}
     </div>
   );
 }

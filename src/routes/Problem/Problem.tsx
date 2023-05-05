@@ -1,16 +1,19 @@
 import { useEffect } from "react";
-import Button from "@/components/ui/atoms/Button/Button";
 import useGetQuestions from "@/hooks/useGetQuestions";
 import { useNavigate, useParams } from "react-router-dom";
 import ProblemLayout from "@/components/ui/template/ProblemLayout";
+import ParentsSelect from "@/components/ui/template/ParentsSelect";
 
 const Problem = () => {
   const { questions, getQuestions } = useGetQuestions();
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const onClickParentButton = (e: any) => {
-    getQuestions(e.target.value);
+  const onClickMotherButton = () => {
+    getQuestions("MOTHER");
+  };
+  const onClickFatherButton = () => {
+    getQuestions("FATHER");
   };
 
   useEffect(() => {
@@ -21,24 +24,10 @@ const Problem = () => {
 
   if (!id) {
     return (
-      <div>
-        <Button
-          onClick={onClickParentButton}
-          value="MOTHER"
-          size="large"
-          variant="default"
-        >
-          엄마
-        </Button>
-        <Button
-          onClick={onClickParentButton}
-          value="FATHER"
-          size="large"
-          variant="default"
-        >
-          아빠
-        </Button>
-      </div>
+      <ParentsSelect
+        onClickMotherButton={onClickMotherButton}
+        onClickFatherButton={onClickFatherButton}
+      />
     );
   }
 

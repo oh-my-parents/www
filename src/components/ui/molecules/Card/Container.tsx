@@ -3,9 +3,13 @@ import cn from "classnames";
 import $ from "./index.module.scss";
 type Props = HTMLAttributes<HTMLDivElement> & {};
 
-const Container = ({ children, className, ...props }: Props) => {
+const Container = ({ children, className, onClick, ...props }: Props) => {
   return (
-    <article className={cn($.container, className)} {...props}>
+    <article
+      onClick={onClick}
+      className={cn($.container, className)}
+      {...props}
+    >
       {children}
     </article>
   );

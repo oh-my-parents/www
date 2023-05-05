@@ -4,7 +4,7 @@ import $ from "./typography.module.scss";
 
 type Props = React.HTMLAttributes<HTMLParagraphElement> & {
   size: "small" | "medium" | "large";
-  variant: "kakao" | "main" | "logo" | "default" | "mainLogo";
+  variant: "kakao" | "main" | "logo" | "default" | "mainLogo" | "parents";
 };
 
 function Typography({ children, variant, size, className, ...props }: Props) {

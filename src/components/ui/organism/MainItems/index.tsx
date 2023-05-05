@@ -4,7 +4,13 @@ import $ from "./mainItems.module.scss";
 import ToggleButton from "../../molecules/ToogleButton";
 import Logo from "../../molecules/Logo";
 
+// state
+import { useRecoilValue } from "recoil";
+import { IsLogin } from "@/utils/recoil/atom";
+
 export default function MainItems() {
+  const isLogin = useRecoilValue(IsLogin);
+
   return (
     <div className={$.mainLayout}>
       <div className={$.musicButtonContainer}>
@@ -16,7 +22,7 @@ export default function MainItems() {
       <Typography size="large" variant="main">
         당신의 부모님, <br /> 어디까지 <br /> 알고있나요?
       </Typography>
-      <KakaoButton />
+      {isLogin ? <div>로그인 되었습니다.</div> : <KakaoButton />}
     </div>
   );
 }

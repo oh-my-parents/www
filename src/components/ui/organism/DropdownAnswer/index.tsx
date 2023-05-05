@@ -6,7 +6,7 @@ import Button from "../../atoms/Button/Button";
 import { useState } from "react";
 
 export default function DropdownAnswer() {
-  const age = [...new Array(100).fill(20)].map(
+  const age = [...new Array(100).fill(0)].map(
     (item, index) => item + index + 1,
   );
   const [click, setClick] = useState(20);

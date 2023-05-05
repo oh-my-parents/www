@@ -1,31 +1,29 @@
 import $ from "./index.module.scss";
-import cn from "classnames";
 import Card from "@/components/ui/molecules/Card";
-import DropDown from "../../molecules/DropDown";
+import cn from "classnames";
+import TextArea from "../../atoms/TextArea";
 import Button from "../../atoms/Button/Button";
 import { useState } from "react";
 
-export default function DropdownAnswer() {
-  const age = [...new Array(100).fill(0)].map(
-    (item, index) => item + index + 1,
-  );
-  const [click, setClick] = useState(20);
-  const [state, setState] = useState(false);
-
+export default function TextAreaAnswer() {
+  const [keyword, setKeyword] = useState("");
   const onClickNextButton = () => {
-    console.log(click);
+    console.log(keyword);
+  };
+
+  const onChangeTextArea = (e: any) => {
+    setKeyword(e.target.value);
   };
   return (
     <>
       <Card.Container className={cn($.answerCard)}>
         <Card.Shilling>😳</Card.Shilling>
         <Card.Body className={cn($.body)}>
-          <DropDown
-            array={age}
-            click={click}
-            state={state}
-            setClick={setClick}
-            setState={setState}
+          <TextArea
+            size="medium"
+            variant="default"
+            className={cn($.textArea)}
+            onChange={onChangeTextArea}
           />
         </Card.Body>
       </Card.Container>

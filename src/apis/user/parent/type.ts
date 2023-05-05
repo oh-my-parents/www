@@ -1,6 +1,6 @@
 import { parentType } from "@/apis/question/type";
 
-export type ShowChildAnswerRequest = {
+export type GetChildAnswerRequest = {
   id: number;
   parentType: string;
 };

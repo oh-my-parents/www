@@ -1,8 +1,10 @@
 import name from "./name";
 import child from "./child";
-import parent from "./parent";
 import user from "./user";
 import result from "./result";
+
+// parents
+import parent from "./parent";
 
 export default {
   user: {

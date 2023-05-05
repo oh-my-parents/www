@@ -3,17 +3,22 @@ import useGetQuestions from "@/hooks/useGetQuestions";
 import { useNavigate, useParams } from "react-router-dom";
 import ProblemLayout from "@/components/ui/template/ProblemLayout";
 import ParentsSelect from "@/components/ui/template/ParentsSelect";
+import { useSetRecoilState } from "recoil";
+import { Parents } from "@/utils/recoil/atom";
 
 const Problem = () => {
   const { questions, getQuestions } = useGetQuestions();
   const navigate = useNavigate();
   const { id } = useParams();
+  const setQuestion = useSetRecoilState(Parents);
 
   const onClickMotherButton = () => {
     getQuestions("MOTHER");
+    setQuestion("MOTHER");
   };
   const onClickFatherButton = () => {
     getQuestions("FATHER");
+    setQuestion("FATHER");
   };
 
   useEffect(() => {

@@ -16,3 +16,9 @@ export const IsLogin = atom<boolean>({
   key: "IsLogin",
   default: authManager.getToken() !== null,
 });
+
+export const Parents = atom<string>({
+  key: "Parents",
+  default: "",
+  effects_UNSTABLE: [persistAtom],
+});

@@ -11,7 +11,7 @@ export default function TextAreaAnswer() {
   const navigate = useProblemNavigate();
 
   const onClickNextButton = () => {
-    navigate(-1);
+    navigate(+1);
   };
 
   const onChangeTextArea = (e: any) => {

@@ -57,8 +57,14 @@
     - answer.tsx
   */
   &.next {
-    background-color: #1d8aef;
-    color: white;
+    background-color: #EBEBEB;
+    border: 1px solid #a9a9a9;
+    font-size: 18px;
+    font-weight: 700;
+    &:hover {
+      background: linear-gradient(180deg, #6A5FE8 0%, #000000 316.67%);
+      color:white;
+    }
   }
 
   &.isLoading {

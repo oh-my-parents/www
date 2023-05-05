@@ -4,9 +4,9 @@ import { authApi } from "@/apis";
 const login = async (code: string) => {
   try {
     const kakaoPayload = await authApi.kakaoLogin(code);
-    const token = await authApi.login(kakaoPayload);
+    const { accessToken } = await authApi.login(kakaoPayload);
 
-    authManager.setAuth(token);
+    authManager.setAuth(accessToken);
     return true;
   } catch (e) {
     return false;

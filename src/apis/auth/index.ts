@@ -2,20 +2,13 @@ import { KAKAO } from "@/constants/api.constants";
 import { kakaoPayload, Auth } from "./types";
 import fetcher from "../fecther";
 
-const login = async (payload: kakaoPayload) => {
-  const requsetData = {
-    accessToken: payload.access_token,
-    refreshToken: payload.refresh_token,
-    expiresIn: payload.expires_in,
-    refreshTokenExpiresIn: payload.refresh_token_expires_in,
-  };
+const login = async (token: { token: string }) => {
   const { data } = await fetcher.post<ResponseContainer<Auth>>(
-    "/auth/login",
-    requsetData,
+    "/auth/kakao",
+    token,
   );
 
   if (data.code !== 200) throw new Error(data.message);
-
   return data.data;
 };
 
@@ -36,7 +29,7 @@ const kakaoLogin = async (code: string) => {
     },
   );
 
-  return data;
+  return { token: data.access_token };
 };
 
 export default {

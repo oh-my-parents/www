@@ -1,11 +1,7 @@
 const storage = localStorage;
 
-type Auth = {
-  token: string;
-};
-
-const setAuth = (auth: Auth) => {
-  storage.setItem("auth", JSON.stringify(auth));
+const setAuth = (token: string) => {
+  storage.setItem("auth", token);
 };
 
 const removeAuth = () => {
@@ -16,14 +12,11 @@ const getAuth = () => {
   const auth = storage.getItem("auth");
 
   if (!auth) return null;
-  return JSON.parse(auth) as Auth;
+  return auth;
 };
 
 const getToken = () => {
-  const auth = getAuth();
-
-  if (auth) return auth.token;
-  else return null;
+  return getAuth();
 };
 
 export default {

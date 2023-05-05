@@ -4,7 +4,8 @@
 // import SelectAnswer from "@/components/ui/organism/SelectAnswer";
 // import DropdownAnswer from "@/components/ui/organism/DropdownAnswer";
 import Questions from "@/components/ui/organism/Question";
-import TextAreaAnswer from "@/components/ui/organism/TextAreaAnswer";
+import InputAnswer from "@/components/ui/organism/InputAnswer";
+// import TextAreaAnswer from "@/components/ui/organism/TextAreaAnswer";
 import $ from "./index.module.scss";
 
 // const sample = ["오늘", "지난주", "지난달", "언제더라..."];
@@ -22,7 +23,8 @@ const ProblemDetailPages = () => {
   return (
     <div className={$.questionLayout}>
       <Questions />
-      <TextAreaAnswer />
+      <InputAnswer />
+      {/* <TextAreaAnswer /> */}
       {/* <DropdownAnswer /> */}
       {/* <SelectAnswer onClick={onClickAnswer} array={sample} /> */}
     </div>

@@ -1,11 +1,14 @@
-type answer = {
+export type parentType = "FATHER" | "MOTHER";
+
+type QuestionType = "SELECT" | "WORD" | "SENTENCE" | "DROPDOWN";
+type Choice = { number: number; content: string };
+export type Question = {
   number: number;
-  answer: string;
+  content: string;
+  choices: Choice[];
+  questionType: QuestionType;
 };
 
-type parentType = "FATHER" | "MOTHER";
-
-type RequestData = {
-  parentType: parentType;
-  answers: answer[];
+export type QuestionsData = {
+  questionDTOs: Question[];
 };

@@ -1,15 +1,14 @@
 import fetcher from "../fecther";
-
-type Question = [];
+import { QuestionsData } from "./type";
 
 const question = async (parentType: string) => {
   try {
-    const { data } = await fetcher.get<ResponseContainer<Question>>(
+    const { data } = await fetcher.get<ResponseContainer<QuestionsData>>(
       `/question?parentType=${parentType}`,
     );
     console.log("api", data);
     if (data.code !== 200) throw new Error(data.message);
-    return data.data;
+    return data.data.questionDTOs;
   } catch (e) {
     throw Error("Unknown Error");
   }

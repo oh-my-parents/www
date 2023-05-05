@@ -2,7 +2,7 @@ export type parentType = "FATHER" | "MOTHER";
 
 type QuestionType = "SELECT" | "WORD" | "SENTENCE" | "DROPDOWN";
 type Choice = { number: number; content: string };
-type Question = {
+export type Question = {
   number: number;
   content: string;
   choices: Choice[];

@@ -1,9 +1,10 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 import authManager from "@/utils/authManager/authManager";
+import { Question as QusetionType } from "@/apis/question/type";
 
 const { persistAtom } = recoilPersist();
-type QuestionAtom = string[];
+type QuestionAtom = QusetionType[];
 
 export const Question = atom<QuestionAtom>({
   key: "Question",

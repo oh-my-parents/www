@@ -1,7 +1,7 @@
 import $ from "./index.module.scss";
 import cn from "classnames";
 import Card from "@/components/ui/molecules/Card";
-import Input from "../../atoms/Input/Index";
+import Input from "../../atoms/Input/index";
 import Button from "../../atoms/Button/Button";
 import { useState } from "react";
 

@@ -1,8 +1,8 @@
-import { scoreApi } from "@/apis";
+import { userApi } from "@/apis";
 
 const getScore = async () => {
   try {
-    const score = await scoreApi.score();
+    const score = await userApi.user.getScore("FATHER");
     return score;
   } catch (e) {
     return false;

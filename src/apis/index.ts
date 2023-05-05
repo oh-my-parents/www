@@ -1,3 +1,3 @@
 export { default as authApi } from "./auth";
 export { default as questionApi } from "./question";
-export { default as scoreApi } from "./user/score";
+export { default as userApi } from "./user";

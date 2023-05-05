@@ -23,9 +23,9 @@
   &.kakao {
     display: inline;
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: -1px;
-    color: #00000085;
+    color: #000000;
   }
 
   &.main {
@@ -44,6 +44,14 @@
     font-weight: 700;
     letter-spacing: -2.5px;
     text-align: center;
+  }
+
+  &.share {
+    margin:0 auto;
+    margin-top:-20px;
+    font-size: 14px;
+    color:#A3A3A3;
+    font-weight: 700;
   }
 
 }

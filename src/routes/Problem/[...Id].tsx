@@ -2,9 +2,10 @@
 // import { useNavigate, useParams } from "react-router-dom";
 // import { useRecoilValue } from "recoil";
 // import SelectAnswer from "@/components/ui/organism/SelectAnswer";
-import DropdownAnswer from "@/components/ui/organism/DropdownAnswer";
+// import DropdownAnswer from "@/components/ui/organism/DropdownAnswer";
 import Questions from "@/components/ui/organism/Question";
 import $ from "./index.module.scss";
+import InputAnswer from "@/components/ui/organism/InputAnswer";
 // const sample = ["오늘", "지난주", "지난달", "언제더라..."];
 
 const ProblemDetailPages = () => {
@@ -20,7 +21,8 @@ const ProblemDetailPages = () => {
   return (
     <div className={$.questionLayout}>
       <Questions />
-      <DropdownAnswer />
+      <InputAnswer />
+      {/* <DropdownAnswer /> */}
       {/* <SelectAnswer onClick={onClickAnswer} array={sample} /> */}
     </div>
   );

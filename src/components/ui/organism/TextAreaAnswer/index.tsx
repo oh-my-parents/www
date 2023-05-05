@@ -4,11 +4,14 @@ import cn from "classnames";
 import TextArea from "../../atoms/TextArea";
 import Button from "../../atoms/Button/Button";
 import { useState } from "react";
+import useProblemNavigate from "@/hooks/useProblemNavigate";
 
 export default function TextAreaAnswer() {
-  const [keyword, setKeyword] = useState("");
+  const [_keyword, setKeyword] = useState("");
+  const navigate = useProblemNavigate();
+
   const onClickNextButton = () => {
-    console.log(keyword);
+    navigate(-1);
   };
 
   const onChangeTextArea = (e: any) => {

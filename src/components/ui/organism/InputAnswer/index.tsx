@@ -2,15 +2,16 @@ import $ from "./index.module.scss";
 import cn from "classnames";
 import Card from "@/components/ui/molecules/Card";
 import Input from "../../atoms/Input";
-
+import useProblemNavigate from "@/hooks/useProblemNavigate";
 import Button from "../../atoms/Button/Button";
 import { useState } from "react";
 
 export default function InputAnswer() {
-  const [keyword, setKeyword] = useState("");
+  const [_keyword, setKeyword] = useState("");
+  const navigate = useProblemNavigate();
 
   const onClickNextButton = () => {
-    console.log(keyword);
+    navigate(+1);
   };
 
   const onChangeInput = (e: any) => {

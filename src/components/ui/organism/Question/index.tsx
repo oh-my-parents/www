@@ -1,17 +1,33 @@
 import $ from "./index.module.scss";
 import cn from "classnames";
 import Card from "@/components/ui/molecules/Card";
+import { useEffect, useState } from "react";
 
-export default function Question() {
-  return (
+type Props = {
+  data: any;
+};
+
+export default function Question({ data }: Props) {
+  const [newData, setNewData] = useState({
+    content: "",
+    number: 0,
+  });
+
+  useEffect(() => {
+    if (data) {
+      setNewData({ content: data.content, number: data.number });
+    }
+  }, [data]);
+
+  return newData ? (
     <Card.Container className={cn($["question-container"])}>
       <Card.Header className={cn($.header)}>
-        <Card.CardIndex current={1} length={10} />
+        <Card.CardIndex current={data.number} length={10} />
       </Card.Header>
-      <Card.Body className={cn($.body)}>
-        아버지와 언제 마지막으로 통화했나요?
-      </Card.Body>
+      <Card.Body className={cn($.body)}>{newData.content}</Card.Body>
       <Card.Footer className={cn($.footer)}>📕💐</Card.Footer>
     </Card.Container>
+  ) : (
+    <></>
   );
 }

@@ -7,7 +7,8 @@ import Callback from "./routes/Callback";
 import Main from "./routes/main";
 import { RecoilRoot } from "recoil";
 import Problem, { ProblemID } from "./routes/Problem";
-
+import { Helmet } from "react-helmet";
+import { SEO as SEO_TEXT } from "@/constants/text.json";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RecoilRoot>
+      <Helmet title={SEO_TEXT.MAIN.TITLE}></Helmet>
       <RouterProvider router={router} />
     </RecoilRoot>
   </React.StrictMode>,

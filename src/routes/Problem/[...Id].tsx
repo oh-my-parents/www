@@ -37,10 +37,12 @@ const ProblemDetailPages = () => {
   };
 
   return (
-    <div className={$.questionLayout}>
-      <Questions data={data} />
-      <Answer />
-    </div>
+    <>
+      <div className={$.questionLayout}>
+        <Questions data={data} />
+        <Answer />
+      </div>
+    </>
   );
 };
 

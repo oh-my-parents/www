@@ -7,7 +7,7 @@ const HomeTemplate = () => {
   const name = "우와아";
   const displayName = josa.이가(name);
   return (
-    <div className={cn($.homeContainer, $.fadeout)}>
+    <div className={cn($.homeContainer)}>
       <header className={$.homeHeader}>
         <div className={$.logoConatiner}>
           <Logo size="medium" variant="gradient">

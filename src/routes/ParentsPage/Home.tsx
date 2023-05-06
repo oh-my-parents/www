@@ -8,7 +8,7 @@ const Home = () => {
   React.useEffect(() => {
     setTimeout(() => {
       navigate("intro");
-    }, 4000);
+    }, 3000);
   }, []);
 
   return <HomeTemplate />;

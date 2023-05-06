@@ -4,8 +4,10 @@ import cn from "classnames";
 type Props = React.HTMLAttributes<HTMLTextAreaElement> & {
   size: "small" | "medium" | "large";
   variant: "default";
+  value?: string;
 };
 export default function TextArea({
+  value,
   onChange,
   size,
   variant,
@@ -15,6 +17,7 @@ export default function TextArea({
     <>
       <textarea
         onChange={onChange}
+        value={value}
         className={cn($[size], $[variant], className)}
       />
     </>

@@ -4,6 +4,7 @@ import useQueryParams from "@/hooks/useQueryParams";
 import authService from "@/service/auth.service";
 import { useSetRecoilState } from "recoil";
 import { IsLogin } from "@/utils/recoil/atom";
+import MainLayout from "@/components/ui/template/MainLayout";
 
 const Callback = () => {
   const code = useQueryParams("code");
@@ -14,13 +15,15 @@ const Callback = () => {
   useEffect(() => {
     (async () => {
       const loginResult = await authService.login(code!);
-      setLogin(loginResult);
-      navigate("/");
+      setTimeout(() => {
+        setLogin(loginResult);
+        navigate("/");
+      }, 100);
     })();
     return () => {};
   }, [code]);
 
-  return <div>Redirect Page</div>;
+  return <MainLayout />;
 };
 
 export default Callback;

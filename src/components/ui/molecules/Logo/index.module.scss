@@ -1,30 +1,32 @@
 .a {
-    &.small {
-        font-size: 16px;
-      }
-    
-    &.medium {
-    font-size: 24px;
-    line-height: 28px;
-    }
+  font-weight: 700;
 
-    &.large {
+  &.small {
+    font-size: 16px;
+    letter-spacing: calc(16px * -0.08);
+  }
+
+  &.medium {
+    line-height: 24px;
+    font-size: 20px;
+    letter-spacing: calc(20px * -0.08);
+  }
+
+  &.large {
     font-size: 50px;
-    }
+    letter-spacing: calc(50px * -0.08);
+  }
 
-    &.plain {
+  &.plain {
     color: white;
-    font-weight: 700;
-    letter-spacing: -2.5px;
     text-align: center;
     text-decoration: none;
-    }
+  }
 
-    &.gradient {
-    background: linear-gradient(90deg,#EA98BE, #5149AB);
-    font-weight: 700;
+  &.gradient {
+    background: linear-gradient(90deg, #ea98be, #5149ab);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: -1.6px;
-    }
+  }
 }

@@ -17,9 +17,7 @@ export default function ProblemNavigation({ onClickLeft, className }: any) {
         buttonSize="small"
       />
 
-      <Logo size="medium" variant="gradient">
-        Oh my parents
-      </Logo>
+      <Logo size="medium" variant="gradient" />
       <IconButton
         src={arrowRight}
         onClick={onClickLeft}

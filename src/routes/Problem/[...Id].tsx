@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import SelectAnswer from "@/components/ui/organism/SelectAnswer";
 import DropdownAnswer from "@/components/ui/organism/DropdownAnswer";
 import Questions from "@/components/ui/organism/Question";
@@ -7,32 +7,27 @@ import InputAnswer from "@/components/ui/organism/InputAnswer";
 import TextAreaAnswer from "@/components/ui/organism/TextAreaAnswer";
 import $ from "./index.module.scss";
 import { Question } from "@/utils/recoil/atom";
-import { useState, useEffect } from "react";
+import { MouseEvent } from "react";
 import useProblemNavigate from "@/hooks/useProblemNavigate";
 import { Answer } from "@/utils/recoil/atom";
-import { useRecoilState } from "recoil";
-
-const sample = ["오늘", "지난주", "지난달", "언제더라..."];
 
 const ProblemDetailPages = () => {
   const { id } = useParams();
   const navigate = useProblemNavigate();
   const questions = useRecoilValue(Question);
-  const [click, setClick] = useState(1);
   const data = questions[Number(id) - 1];
-  const [answer, setAnswer] = useRecoilState(Answer);
+  const setAnswer = useSetRecoilState(Answer);
 
-  useEffect(() => {
-    if (answer.length >= Number(id)) {
-      const after = answer.slice(1);
-      setAnswer([sample[click], ...after]);
-    } else {
-      setAnswer([sample[click]]);
-    }
-  }, [click]);
+  const onClickAnswer = (e: MouseEvent<HTMLButtonElement>) => {
+    const content = e.currentTarget.textContent!;
 
-  const onClickAnswer = (index: any) => {
-    setClick(index);
+    setAnswer((prev) => {
+      if (prev.length)
+        return prev.map((item, idx) =>
+          idx === Number(id) - 1 ? content : item,
+        );
+      return [content];
+    });
     navigate(+1);
   };
 
@@ -43,7 +38,7 @@ const ProblemDetailPages = () => {
       case "DROPDOWN":
         return <DropdownAnswer />;
       case "SELECT":
-        return <SelectAnswer onClick={onClickAnswer} array={sample} />;
+        return <SelectAnswer onClick={onClickAnswer} choices={data.choices} />;
       case "SENTENCE":
         return <TextAreaAnswer />;
       default:

@@ -4,24 +4,18 @@ import cn from "classnames";
 import TextArea from "../../atoms/TextArea";
 import Button from "../../atoms/Button/Button";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useProblemNavigate from "@/hooks/useProblemNavigate";
 import { Answer } from "@/utils/recoil/atom";
 import { useRecoilState } from "recoil";
 import { useParams } from "react-router-dom";
 
 export default function TextAreaAnswer() {
-  const [keyword, setKeyword] = useState("");
-  const navigate = useProblemNavigate();
-  const naviagtion = useNavigate();
-  const [answer, setAnswer] = useRecoilState(Answer);
   const { id } = useParams();
-
-  useEffect(() => {
-    if (answer.length >= Number(id)) {
-      setKeyword(answer[Number(id) - 1]);
-    }
-  }, []);
+  const naviagtion = useNavigate();
+  const navigate = useProblemNavigate();
+  const [answer, setAnswer] = useRecoilState(Answer);
+  const [keyword, setKeyword] = useState(answer[Number(id) - 1]);
 
   const onClickNextButton = () => {
     if (answer.length >= Number(id)) {
@@ -55,7 +49,12 @@ export default function TextAreaAnswer() {
           />
         </Card.Body>
       </Card.Container>
-      <Button size="large" variant="next" onClick={onClickNextButton}>
+      <Button
+        size="large"
+        variant="next"
+        onClick={onClickNextButton}
+        disabled={!keyword || keyword.length < 1}
+      >
         다음 문제
       </Button>
     </>

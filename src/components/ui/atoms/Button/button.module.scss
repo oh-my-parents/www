@@ -2,7 +2,9 @@
   border-radius: 30px;
   border: none;
   background-color: white;
-
+  &:hover{
+    cursor: pointer;
+  }
   &.small {
     padding: 12px 14px;
   }
@@ -40,6 +42,7 @@
       color: white;
       background:  linear-gradient(180deg, #6A5FE8 0%, #000000 316.67%)
     }
+    
   }
 
   /*
@@ -58,14 +61,24 @@
   */
   &.next {
     background-color: #EBEBEB;
-    border: 1px solid #a9a9a9;
+    border: 1px solid #cecece;
+    color: black;
     font-size: 18px;
     font-weight: 700;
     width:90%;
     margin:0 auto;
-    &:hover {
-      background: linear-gradient(180deg, #6A5FE8 0%, #000000 316.67%);
-      color:white;
+    &:not(:disabled){
+      &:hover {
+        background: linear-gradient(180deg, #6A5FE8 0%, #000000 316.67%);
+        color:white;
+      }
+    }
+    &:disabled{
+      &:hover{
+        background: #EBEBEB;
+        color: black;
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -98,4 +111,6 @@
     padding:0;
     position: relative;
   }
+
+  
 }

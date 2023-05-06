@@ -16,6 +16,7 @@ type Props = React.HTMLAttributes<HTMLButtonElement> & {
     | "navigation";
   isLoading?: Boolean;
   value?: string;
+  disabled?: boolean;
 };
 
 function Button({
@@ -26,6 +27,7 @@ function Button({
   isLoading,
   value,
   className,
+  disabled,
 }: Props) {
   return (
     <button
@@ -41,6 +43,7 @@ function Button({
         className,
       )}
       onClick={onClick}
+      disabled={disabled}
     >
       {!isLoading ? children : <IsLoadingComponent />}
     </button>

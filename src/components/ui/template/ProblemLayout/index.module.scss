@@ -1,6 +1,6 @@
 .problemLayout {
     height: 100%;
-    width: 74vw;
+    width: 375px;
     margin:0 auto;
     
     .problemLayoutBody {
@@ -8,6 +8,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0 auto;
+        width: 275px;
         gap: 0.5vh;
     }
 }

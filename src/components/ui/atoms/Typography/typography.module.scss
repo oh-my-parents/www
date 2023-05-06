@@ -42,16 +42,19 @@
   &.logo {
     color: white;
     font-weight: 700;
-    letter-spacing: -2.5px;
+    letter-spacing: -1.6px;
     text-align: center;
   }
 
   &.share {
     margin:0 auto;
     margin-top:-20px;
-    font-size: 14px;
     color:#A3A3A3;
     font-weight: 700;
+    font-size: 14px;
+    position: relative;
+    right: 20px;
+    width:300px;
   }
 
 }

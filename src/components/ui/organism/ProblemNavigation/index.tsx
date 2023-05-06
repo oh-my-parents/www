@@ -12,8 +12,8 @@ export default function ProblemNavigation({ onClickLeft, className }: any) {
         src={arrowLeft}
         onClick={onClickLeft}
         iconSize="small"
-        iconVariant="default"
-        buttonVariant="arrow"
+        iconVariant="navigation"
+        buttonVariant="navigation"
         buttonSize="small"
       />
 
@@ -24,8 +24,8 @@ export default function ProblemNavigation({ onClickLeft, className }: any) {
         src={arrowRight}
         onClick={onClickLeft}
         iconSize="small"
-        iconVariant="default"
-        buttonVariant="arrow"
+        iconVariant="navigation"
+        buttonVariant="navigation"
         buttonSize="small"
       />
     </div>

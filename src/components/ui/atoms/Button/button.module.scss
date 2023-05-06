@@ -12,7 +12,7 @@
   }
 
   &.large {
-    padding: 14px 92px;
+    padding: 14px 0px;
   }
 
   /*
@@ -92,5 +92,10 @@
     font-weight: 600;
     padding:18px 0;
     margin:0 auto;
+  }
+
+  &.navigation {
+    padding:0;
+    position: relative;
   }
 }

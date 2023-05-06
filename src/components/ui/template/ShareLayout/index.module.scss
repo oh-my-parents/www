@@ -2,25 +2,38 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    width: 275px;
+    margin:0 auto;
     .problemNavigation{
-        width:74vw !important;
         margin:0 auto;
         justify-content: space-between;
     }
     .container {
+        height: 177px;
         width: 130px;
         margin:0 auto;
         text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        h2 {
+            height:40%;
+            margin: auto;
+        }
     }
     .body {
         text-align: center;
+        flex-grow: 0;
+        height:20%;
+        h2{
+            margin: 0;
+        }
     }
    
 }
 .check {
     width: 260px  !important;
     padding: 20px 0;
-    font-size: 16px;
     font-weight: 700;
     margin:0 auto;
 }

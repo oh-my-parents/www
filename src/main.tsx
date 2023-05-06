@@ -7,6 +7,7 @@ import Callback from "./routes/Callback";
 import Main from "./routes/main";
 import { RecoilRoot } from "recoil";
 import Problem, { ProblemID } from "./routes/Problem";
+import ParentsPage from "@/routes/ParentsPage/";
 import { SEO as SEO_TEXT } from "@/constants/text.json";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "./components/SEO";
@@ -38,6 +39,20 @@ const router = createBrowserRouter([
   {
     path: "/share",
     element: <ShareLayout />,
+  },
+  {
+    path: "/parents",
+    element: <ParentsPage.Layout />,
+    children: [
+      {
+        path: "",
+        element: <ParentsPage.Home />,
+      },
+      {
+        path: "intro",
+        element: <ParentsPage.Intro />,
+      },
+    ],
   },
 ]);
 

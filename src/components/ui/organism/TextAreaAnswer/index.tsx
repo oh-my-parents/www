@@ -3,6 +3,7 @@ import Card from "@/components/ui/molecules/Card";
 import cn from "classnames";
 import TextArea from "../../atoms/TextArea";
 import Button from "../../atoms/Button/Button";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useProblemNavigate from "@/hooks/useProblemNavigate";
 import { Answer } from "@/utils/recoil/atom";
@@ -12,6 +13,7 @@ import { useParams } from "react-router-dom";
 export default function TextAreaAnswer() {
   const [keyword, setKeyword] = useState("");
   const navigate = useProblemNavigate();
+  const naviagtion = useNavigate();
   const [answer, setAnswer] = useRecoilState(Answer);
   const { id } = useParams();
 
@@ -28,6 +30,10 @@ export default function TextAreaAnswer() {
       setAnswer([...before, keyword, ...after]);
     } else {
       setAnswer([...answer, keyword]);
+    }
+    if (Number(id) === 10) {
+      naviagtion("/share");
+      return;
     }
     navigate(+1);
   };

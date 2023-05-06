@@ -1,9 +1,6 @@
 .layout{
-  --gutter: 20px;
-  --gutter-half: calc(var(--gutter) / 2);
-
   max-width: 393px;
   margin: 0 auto;
   height: 100vh;
-  
+  max-height: 852px;
 }

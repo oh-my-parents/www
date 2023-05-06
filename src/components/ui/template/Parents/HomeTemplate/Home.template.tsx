@@ -10,9 +10,7 @@ const HomeTemplate = () => {
     <div className={cn($.homeContainer)}>
       <header className={$.homeHeader}>
         <div className={$.logoConatiner}>
-          <Logo size="medium" variant="gradient">
-            Oh my parents
-          </Logo>
+          <Logo size="medium" variant="gradient" />
         </div>
         <h1
           className={$.greeting}

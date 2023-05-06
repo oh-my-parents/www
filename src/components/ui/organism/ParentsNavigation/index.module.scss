@@ -1,0 +1,38 @@
+.navigation{
+  display: block;
+  justify-content: flex-start;
+  margin-top:50px;
+  gap:43px;
+  padding: 12px 0;
+  align-items: flex-start;
+  button{
+    position: absolute !important;
+    display: inline;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    
+    img{
+      width: 8px !important;
+      height: 13px !important;;
+      padding: 5px 2px;
+    }
+  }
+  .spacer::after{
+    content: " ";
+    display: block;
+    width: 100xpx;
+    height: 100%;
+    background-color: #000000;
+  }
+   
+}
+
+.logoContainer{
+  display: block;
+  text-align: center;
+  a {
+    margin: 0 auto;
+    text-align: center;
+   }
+}

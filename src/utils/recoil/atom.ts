@@ -22,3 +22,9 @@ export const Parents = atom<string>({
   default: "",
   effects_UNSTABLE: [persistAtom],
 });
+
+export const Answer = atom<string[]>({
+  key: "Answer",
+  default: [],
+  effects_UNSTABLE: [persistAtom],
+});

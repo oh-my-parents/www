@@ -4,13 +4,31 @@ import Card from "@/components/ui/molecules/Card";
 import Input from "../../atoms/Input";
 import useProblemNavigate from "@/hooks/useProblemNavigate";
 import Button from "../../atoms/Button/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Answer } from "@/utils/recoil/atom";
+import { useRecoilState } from "recoil";
+import { useParams } from "react-router-dom";
 
 export default function InputAnswer() {
-  const [_keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState("");
   const navigate = useProblemNavigate();
+  const [answer, setAnswer] = useRecoilState(Answer);
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (answer.length >= Number(id)) {
+      setKeyword(answer[Number(id) - 1]);
+    }
+  }, []);
 
   const onClickNextButton = () => {
+    if (answer.length >= Number(id)) {
+      const before = answer.slice(0, Number(id) - 1);
+      const after = answer.slice(Number(id));
+      setAnswer([...before, keyword, ...after]);
+    } else {
+      setAnswer([...answer, keyword]);
+    }
     navigate(+1);
   };
 
@@ -28,6 +46,7 @@ export default function InputAnswer() {
             variant="default"
             type="text"
             onChange={onChangeInput}
+            value={keyword}
           />
         </Card.Body>
       </Card.Container>

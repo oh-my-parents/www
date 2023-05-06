@@ -24,8 +24,10 @@ const Problem = () => {
   };
 
   useEffect(() => {
-    setAnswer([]);
-    setParents("");
+    if (questions.length === 0) {
+      setAnswer([]);
+      setParents("");
+    }
     return () => {};
   }, [questions]);
 

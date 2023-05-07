@@ -12,6 +12,7 @@ import { SEO as SEO_TEXT } from "@/constants/text.json";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "./components/SEO";
 import ShareLayout from "./components/ui/template/ShareLayout";
+import Soon from "./routes/Soon";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         element: <ParentsPage.Store />,
       },
     ],
+  },
+  {
+    path: "/soon",
+    element: <Soon />,
   },
 ]);
 

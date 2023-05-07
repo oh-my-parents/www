@@ -25,5 +25,15 @@
     font-size:56px;
   }
 
- 
+  &.soon {
+    width: 150px;
+    height: 48px;
+  }
+
+  &.please {
+    width: 100%;
+    text-align: center;
+    height: 48px;
+    font-size:48px;
+  }
 }

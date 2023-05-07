@@ -11,7 +11,9 @@ type Props = {
     | "music"
     | "parents"
     | "navigation"
-    | "variant";
+    | "variant"
+    | "soon"
+    | "please";
   children?: React.ReactNode;
 };
 

@@ -54,6 +54,10 @@ const router = createBrowserRouter([
         element: <ParentsPage.Intro />,
       },
       {
+        path: "report",
+        element: <ParentsPage.Report />,
+      },
+      {
         path: "store",
         element: <ParentsPage.Store />,
       },

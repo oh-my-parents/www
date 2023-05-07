@@ -4,6 +4,8 @@ import Body from "./Body";
 import ButtonGroup from "./ButtonGroup";
 import Button from "./Button";
 import Text from "./Text";
+import Answer from "./Answer";
+
 export default {
   Container,
   Header,
@@ -11,4 +13,5 @@ export default {
   ButtonGroup,
   Button,
   Text,
+  Answer,
 };

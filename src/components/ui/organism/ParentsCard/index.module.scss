@@ -22,7 +22,7 @@
       line-height: 19px;
       letter-spacing: 0em;
       text-align: center;
-      
+
       padding: 13px 14px;
       word-break: break-all;
       white-space: pre-wrap;
@@ -48,25 +48,23 @@
   }
 }
 
-.container:has(.intro){
-  .bodyText{
-    font-family: 'Pretendard';
+.container:has(.intro) {
+  .bodyText {
+    font-family: "Pretendard";
     font-style: normal;
     font-weight: 600;
     font-size: 16px !important;
     line-height: 19px !important;
     text-align: center;
     color: #000000;
-
   }
 }
-
 
 .buttonGroup {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding:18px 0px;
+  padding: 18px 0px;
   justify-content: center;
   button {
     border: 1px solid #ffffff;
@@ -79,16 +77,32 @@
     line-height: 17px;
     letter-spacing: -0.1em;
     text-align: center;
-    padding: 11px 18px;
+    padding: 11px 18px !important;
     box-shadow: 2px 2px 5px 0px #00000040, 2px 2px 5px 0px #ffffff40 inset;
     border: 1px solid #ffffff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25),
-        inset 2px 2px 5px rgba(255, 255, 255, 0.25);
+      inset 2px 2px 5px rgba(255, 255, 255, 0.25);
+
     &.positive {
       background: #4ed37b;
     }
     &.negative {
       background: #d34e4e;
     }
+
+    &.unchecked {
+      background: #b9b9b9 !important;
+    }
   }
+}
+
+.answerPlace {
+  padding: 7px 19px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  text-align: center;
+  background: #f0f0f0;
+  border-radius: 10px;
+  display: inline-block;
 }

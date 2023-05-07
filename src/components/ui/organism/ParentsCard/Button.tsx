@@ -6,9 +6,15 @@ import $ from "./index.module.scss";
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   isPositive?: boolean;
   value?: string;
+  unchecked?: boolean;
 };
 
-const Button = ({ children, isPositive, ...props }: Props) => {
+const Button = ({
+  children,
+  isPositive,
+  unchecked = false,
+  ...props
+}: Props) => {
   return (
     <ButtonUI
       size="small"
@@ -16,6 +22,7 @@ const Button = ({ children, isPositive, ...props }: Props) => {
       className={cn({
         [$.positive]: isPositive,
         [$.negative]: !isPositive,
+        [$.unchecked]: unchecked,
       })}
       {...props}
     >

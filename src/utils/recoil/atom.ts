@@ -28,3 +28,26 @@ export const Answer = atom<string[]>({
   default: [],
   effects_UNSTABLE: [persistAtom],
 });
+
+/**
+ * not implemented
+ */
+// export type ParentsReciveAnswerType = {
+
+// }
+
+// export const ParentsReciveAnswer = atom<string[]>({
+//   key: "ParentsReciveAnswer",
+//   default: [],
+//   effects_UNSTABLE: [persistAtom],
+// });
+
+export type AtomParentsSelectAnswerType = {
+  [questionNumber: number]: boolean;
+};
+
+export const ParentsSelectAnswer = atom<AtomParentsSelectAnswerType>({
+  key: "ParentsSelectAnswer",
+  default: {},
+  effects_UNSTABLE: [persistAtom],
+});

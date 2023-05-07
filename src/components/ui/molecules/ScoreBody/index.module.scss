@@ -1,0 +1,30 @@
+.layout {
+    padding: 30px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .icon {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 84px;
+    letter-spacing: -0.1em;
+    }
+    .title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.1em;
+    }
+    .description {
+        white-space:pre-line;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: -0.08em;
+    color: #A3A3A3;
+    }
+}

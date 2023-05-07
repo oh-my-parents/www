@@ -17,7 +17,7 @@ export default function SelectParents({
       <Card.Container className={cn($.container)} onClick={onClickMotherButton}>
         <Card.Header>
           <Icon size="large" variant="parents">
-            😀
+            🦸🏻‍♀️
           </Icon>
         </Card.Header>
         <Card.Body className={cn($.body)}>
@@ -27,7 +27,7 @@ export default function SelectParents({
       <Card.Container className={cn($.container)} onClick={onClickFatherButton}>
         <Card.Header>
           <Icon size="large" variant="parents">
-            😀
+            🦸🏻‍♂️
           </Icon>
         </Card.Header>
         <Card.Body className={cn($.body)}>

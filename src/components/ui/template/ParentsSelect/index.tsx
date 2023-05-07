@@ -6,11 +6,13 @@ import SelectParents from "../../organism/SelectParents";
 type Props = {
   onClickMotherButton: any;
   onClickFatherButton: any;
+  children: any;
 };
 
 export default function ParentsSelect({
   onClickMotherButton,
   onClickFatherButton,
+  children,
 }: Props) {
   const navigate = useNavigate();
 
@@ -21,7 +23,7 @@ export default function ParentsSelect({
         onClickLogo={() => navigate("/")}
         onClickLeft={() => navigate("/")}
       />
-      <h1>누구에 대해 알아볼까요?</h1>
+      <h1>{children}</h1>
       <SelectParents
         onClickMotherButton={onClickMotherButton}
         onClickFatherButton={onClickFatherButton}

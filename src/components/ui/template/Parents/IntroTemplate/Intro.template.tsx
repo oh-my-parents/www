@@ -4,8 +4,15 @@ import $ from "./index.module.scss";
 import cn from "classnames";
 import TEXT from "@/constants/text.json";
 import Typography from "@/components/ui/atoms/Typography/Typography";
+import { useNavigate } from "react-router-dom";
 
 const IntroTemplate = () => {
+  const navigate = useNavigate();
+
+  const onClickButton = () => {
+    navigate("/parents/report");
+  };
+
   return (
     <div className={cn($.introContainer)}>
       <ParentsNavigation hasBackButton />
@@ -16,8 +23,10 @@ const IntroTemplate = () => {
         <ParentsCard.Body>
           <ParentsCard.Text>{TEXT.PARENTS.INTRO.DESCRIPTION}</ParentsCard.Text>
           <ParentsCard.ButtonGroup>
-            <ParentsCard.Button>{TEXT.PARENTS.ANSWER.WRONG}</ParentsCard.Button>
-            <ParentsCard.Button isPositive>
+            <ParentsCard.Button onClick={onClickButton}>
+              {TEXT.PARENTS.ANSWER.WRONG}
+            </ParentsCard.Button>
+            <ParentsCard.Button onClick={onClickButton} isPositive>
               {TEXT.PARENTS.ANSWER.RIGHT}
             </ParentsCard.Button>
           </ParentsCard.ButtonGroup>

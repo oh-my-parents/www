@@ -10,6 +10,7 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const Button = ({
+  onClick,
   children,
   isPositive,
   unchecked = false,
@@ -17,6 +18,7 @@ const Button = ({
 }: Props) => {
   return (
     <ButtonUI
+      onClick={onClick}
       size="small"
       variant="default"
       className={cn({

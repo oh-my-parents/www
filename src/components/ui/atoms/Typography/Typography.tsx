@@ -13,7 +13,9 @@ type Props = React.HTMLAttributes<HTMLParagraphElement> & {
     | "parents"
     | "share"
     | "variant"
-    | "store";
+    | "store"
+    | "soon"
+    | "prepare";
 };
 
 function Typography({ children, variant, size, className, ...props }: Props) {

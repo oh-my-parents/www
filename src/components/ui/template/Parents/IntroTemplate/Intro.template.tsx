@@ -16,8 +16,10 @@ const IntroTemplate = () => {
         <ParentsCard.Body>
           <ParentsCard.Text>{TEXT.PARENTS.INTRO.DESCRIPTION}</ParentsCard.Text>
           <ParentsCard.ButtonGroup>
-            <ParentsCard.Button>틀렸습니다!</ParentsCard.Button>
-            <ParentsCard.Button isPositive>정답입니다!</ParentsCard.Button>
+            <ParentsCard.Button>{TEXT.PARENTS.ANSWER.WRONG}</ParentsCard.Button>
+            <ParentsCard.Button isPositive>
+              {TEXT.PARENTS.ANSWER.RIGHT}
+            </ParentsCard.Button>
           </ParentsCard.ButtonGroup>
         </ParentsCard.Body>
       </ParentsCard.Container>

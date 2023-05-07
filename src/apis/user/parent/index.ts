@@ -3,6 +3,7 @@ import {
   ParentAnswerRequest,
   ParentAnswerResponse,
   GetChildAnswerRequest,
+  GetChildAnswerResponse,
 } from "./type";
 /**
  * 자식이 제출한 parentType의 값
@@ -10,7 +11,10 @@ import {
  * @returns
  */
 const getAnswer = async (requstData: GetChildAnswerRequest) => {
-  const response = await fetcher.post("/user/parent/question", requstData);
+  const response = await fetcher.post<GetChildAnswerResponse>(
+    "/user/parent/question",
+    requstData,
+  );
   console.log(response);
   return response.data;
 };

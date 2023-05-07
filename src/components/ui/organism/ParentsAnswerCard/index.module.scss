@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 240px;
+
+  .header {
+    display: flex;
+
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 34px;
+    width: 100%;
+
+    .cardIndex {
+      span:nth-child(1) {
+        line-height: 43px;
+      }
+    }
+    .icons {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: 0em;
+      text-align: right;
+    }
+  }
+
+  .body {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    padding: 15px 14px;
+
+    .helperText {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: left;
+    }
+    .answer {
+      padding: 7px 19px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+  .buttonGroup {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+
+    button {
+      font-family: Pretendard;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17px;
+      letter-spacing: -0.1em;
+      text-align: center;
+      padding: 11px 18px;
+    }
+  }
+
+  + .container {
+    margin-top: 24px;
+  }
+}

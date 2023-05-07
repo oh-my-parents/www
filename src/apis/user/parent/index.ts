@@ -11,12 +11,19 @@ import {
  * @returns
  */
 const getAnswer = async (requstData: GetChildAnswerRequest) => {
-  const response = await fetcher.post<GetChildAnswerResponse>(
+  const { data } = await fetcher.post<GetChildAnswerResponse>(
     "/user/parent/question",
     requstData,
   );
-  console.log(response);
-  return response.data;
+
+  if (data.code !== 200) throw data.message;
+
+  const result = {
+    name: data.data.name,
+    answered: data.data.answered,
+    answers: data.data.userQuestionWithChildAnswers,
+  };
+  return result;
 };
 
 const submitAnswer = async (requestData: ParentAnswerRequest) => {
@@ -24,6 +31,8 @@ const submitAnswer = async (requestData: ParentAnswerRequest) => {
     "/user/parent/answer",
     requestData,
   );
+  if (data.code !== 200) throw data.message;
+
   return data.data;
 };
 

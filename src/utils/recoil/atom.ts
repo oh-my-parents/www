@@ -2,6 +2,7 @@ import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 import authManager from "@/utils/authManager/authManager";
 import { Question as QusetionType } from "@/apis/question/type";
+import { ChildAnswer } from "@/apis/user/parent/type";
 
 const { persistAtom } = recoilPersist();
 type QuestionAtom = QusetionType[];
@@ -19,7 +20,7 @@ export const IsLogin = atom<boolean>({
 
 export const Parents = atom<string>({
   key: "Parents",
-  default: "",
+  default: "FATHER",
   effects_UNSTABLE: [persistAtom],
 });
 
@@ -36,12 +37,14 @@ export const Answer = atom<string[]>({
 
 // }
 
-// export const ParentsReciveAnswer = atom<string[]>({
-//   key: "ParentsReciveAnswer",
-//   default: [],
-//   effects_UNSTABLE: [persistAtom],
-// });
-
+export const ParentsReciveAnswer = atom<ChildAnswer[]>({
+  key: "ParentsReciveAnswer",
+  default: [],
+  effects_UNSTABLE: [persistAtom],
+});
+/**
+ * {1: ture, 2:false, }
+ */
 export type AtomParentsSelectAnswerType = {
   [questionNumber: number]: boolean;
 };
@@ -49,5 +52,23 @@ export type AtomParentsSelectAnswerType = {
 export const ParentsSelectAnswer = atom<AtomParentsSelectAnswerType>({
   key: "ParentsSelectAnswer",
   default: {},
+  effects_UNSTABLE: [persistAtom],
+});
+
+export const IsAnswered = atom<boolean>({
+  key: "IsAnswered",
+  default: false,
+  effects_UNSTABLE: [persistAtom],
+});
+
+export const ChildName = atom<string>({
+  key: "ChildName",
+  default: "",
+  effects_UNSTABLE: [persistAtom],
+});
+
+export const Id = atom<string>({
+  key: "Id",
+  default: "",
   effects_UNSTABLE: [persistAtom],
 });

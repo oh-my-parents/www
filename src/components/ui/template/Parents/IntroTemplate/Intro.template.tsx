@@ -5,9 +5,17 @@ import cn from "classnames";
 import TEXT from "@/constants/text.json";
 import Typography from "@/components/ui/atoms/Typography/Typography";
 import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { Parents, Id } from "@/utils/recoil/atom";
+import useGetChildrenReponse from "@/hooks/useGetChildrenReponse";
+import { parentType } from "@/apis/question/type";
 
 const IntroTemplate = () => {
   const navigate = useNavigate();
+  const { answered } = useGetChildrenReponse(
+    useRecoilValue(Id),
+    useRecoilValue(Parents) as parentType,
+  );
 
   const onClickButton = () => {
     navigate("/parents/report");
@@ -21,7 +29,11 @@ const IntroTemplate = () => {
           {TEXT.PARENTS.INTRO.HEADER}
         </ParentsCard.Header>
         <ParentsCard.Body>
-          <ParentsCard.Text>{TEXT.PARENTS.INTRO.DESCRIPTION}</ParentsCard.Text>
+          <ParentsCard.Text>
+            {answered
+              ? TEXT.PARENTS.INTRO.DESCRIPTION
+              : TEXT.PARENTS.INTRO.ANSWERED_DESCRIPTION}
+          </ParentsCard.Text>
           <ParentsCard.ButtonGroup>
             <ParentsCard.Button onClick={onClickButton}>
               {TEXT.PARENTS.ANSWER.WRONG}

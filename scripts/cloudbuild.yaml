@@ -10,6 +10,7 @@ steps:
       - "VITE_APP_HOST=${_VITE_APP_HOST}"
       - "VITE_APP_KAKAO_API_KEY=${_VITE_APP_KAKAO_API_KEY}"
       - "VITE_APP_API_HOST=${_VITE_APP_API_HOST}"
+      - "VITE_APP_KAKAO_JAVASCRIPT_KEY=${_VITE_APP_KAKAO_JAVASCRIPT_KEY}"
     args:
       - "-c"
       - "apt-get update && apt-get install -y gettext-base && touch .env && envsubst < .env.template > .env && cat .env"

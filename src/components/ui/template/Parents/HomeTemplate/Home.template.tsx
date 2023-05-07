@@ -3,8 +3,7 @@ import $ from "./index.module.scss";
 import cn from "classnames";
 import josa from "@/utils/josa";
 
-const HomeTemplate = () => {
-  const name = "우와";
+const HomeTemplate = ({ name }: { name: string }) => {
   const displayName = josa.이가(name);
   return (
     <div className={cn($.homeContainer)}>

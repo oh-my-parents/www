@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     element: <ParentsPage.Layout />,
     children: [
       {
-        path: "",
+        path: ":id/:parents",
         element: <ParentsPage.Home />,
       },
       {

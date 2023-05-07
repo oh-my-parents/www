@@ -1,6 +1,5 @@
 import { userApi } from "@/apis";
 import { parentType } from "@/apis/question/type";
-import { Answer } from "@/apis/user/type";
 
 const getScore = async (parentType: parentType) => {
   const data = await userApi.user.getScore(parentType);
@@ -14,10 +13,14 @@ const getResults = async (parentType: parentType) => {
   return data;
 };
 
-const submitAnswer = async (
-  parentType: parentType,
-  userChildAnswer: Answer[],
-) => {
+const submitAnswer = async (parentType: parentType, answers: string[]) => {
+  const userChildAnswer = answers.map((answer, index) => {
+    return {
+      number: index + 1,
+      answer,
+    };
+  });
+
   const data = await userApi.user.submitAnswer({
     parentType,
     userChildAnswer,

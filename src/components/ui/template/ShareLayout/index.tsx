@@ -7,13 +7,52 @@ import KakaoButton from "../../molecules/KakaoButton";
 import Typography from "../../atoms/Typography/Typography";
 import { useRecoilValue } from "recoil";
 import { Parents } from "@/utils/recoil/atom";
+import { APP_HOST } from "@/constants/api.constants";
+import authManager from "@/utils/authManager/authManager";
+import { decode } from "@/utils/jwt";
 
 export default function ShareLayout() {
   const parents = useRecoilValue(Parents);
   const parent = parents === "MOTHER" ? "어머니" : "아버지";
   const parentIcon = parents === "MOTHER" ? "👩🏻" : "👨🏻";
 
-  const onClickShareButton = () => {};
+  const kakaoButton = () => {
+    const { sub } = decode(authManager.getToken()!);
+    const encId = encodeURI(sub!);
+    const encParents = encodeURI(parents);
+    const url = `${APP_HOST}/parents/${encId}/${encParents}`;
+
+    if (window.Kakao) {
+      const kakao = window.Kakao;
+
+      if (!kakao.isInitialized()) {
+        kakao.init(import.meta.env.VITE_APP_KAKAO_JAVASCRIPT_KEY);
+      }
+
+      kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: "어버이날 모의고사",
+          description: "부모님 얼마나 알고계신가요?",
+          imageUrl: "",
+          link: {
+            mobileWebUrl: url,
+            webUrl: url,
+          },
+        },
+        buttons: [
+          {
+            title: "채점하러 가기",
+            link: {
+              mobileWebUrl: url,
+              webUrl: url,
+            },
+          },
+        ],
+      });
+    }
+  };
+
   return (
     <div className={$.parentsSelect}>
       <ProblemNavigation className={$.problemNavigation} />
@@ -27,7 +66,7 @@ export default function ShareLayout() {
           <h2>{parent}</h2>
         </Card.Body>
       </Card.Container>
-      <KakaoButton className={cn($.check)} onClick={onClickShareButton}>
+      <KakaoButton className={cn($.check)} onClick={kakaoButton}>
         {`${parent}께 채점받기`}
       </KakaoButton>
       <Typography size="medium" variant="share">

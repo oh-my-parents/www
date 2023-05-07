@@ -6,9 +6,11 @@ import Button from "../../atoms/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useProblemNavigate from "@/hooks/useProblemNavigate";
-import { Answer } from "@/utils/recoil/atom";
-import { useRecoilState } from "recoil";
+import { Answer, Parents } from "@/utils/recoil/atom";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { useParams } from "react-router-dom";
+import userService from "@/service/user.service";
+import { parentType } from "@/apis/question/type";
 
 export default function TextAreaAnswer() {
   const { id } = useParams();
@@ -16,6 +18,7 @@ export default function TextAreaAnswer() {
   const navigate = useProblemNavigate();
   const [answer, setAnswer] = useRecoilState(Answer);
   const [keyword, setKeyword] = useState(answer[Number(id) - 1]);
+  const parentsType = useRecoilValue(Parents);
 
   const onClickNextButton = () => {
     if (answer.length >= Number(id)) {
@@ -26,6 +29,7 @@ export default function TextAreaAnswer() {
       setAnswer([...answer, keyword]);
     }
     if (Number(id) === 10) {
+      userService.submitAnswer(parentsType as parentType, answer);
       naviagtion("/share");
       return;
     }

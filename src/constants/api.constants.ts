@@ -1,4 +1,4 @@
-const APP_HOST = import.meta.env.VITE_APP_HOST;
+export const APP_HOST = import.meta.env.VITE_APP_HOST;
 const API_HOST = import.meta.env.VITE_APP_API_HOST;
 const PREFIX = "api";
 const VERSION = "v1";

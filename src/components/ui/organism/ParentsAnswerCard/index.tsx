@@ -35,7 +35,7 @@ const index = ({ answer, whole, onClick }: Props) => {
           {HELPER_TEXT.ABOVE}
         </Card.HelperText>
         <ParentsCard.Answer className={cn($.answer)}>
-          {answer.question}
+          {answer.childAnswer}
         </ParentsCard.Answer>
         {HELPER_TEXT.UNDER ? (
           <Card.HelperText className={cn($.helperText)}>

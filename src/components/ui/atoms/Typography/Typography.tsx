@@ -11,7 +11,9 @@ type Props = React.HTMLAttributes<HTMLParagraphElement> & {
     | "default"
     | "mainLogo"
     | "parents"
-    | "share";
+    | "share"
+    | "variant"
+    | "store";
 };
 
 function Typography({ children, variant, size, className, ...props }: Props) {

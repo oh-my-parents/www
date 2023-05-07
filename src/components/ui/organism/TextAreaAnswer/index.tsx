@@ -55,7 +55,7 @@ export default function TextAreaAnswer() {
         onClick={onClickNextButton}
         disabled={!keyword || keyword.length < 1}
       >
-        다음 문제
+        {id === "10" ? "제출하기" : "다음문제"}
       </Button>
     </>
   );

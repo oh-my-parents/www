@@ -13,7 +13,9 @@ type Props = React.HTMLAttributes<HTMLButtonElement> & {
     | "next"
     | "user"
     | "default"
-    | "navigation";
+    | "navigation"
+    | "again"
+    | "store";
   isLoading?: Boolean;
   value?: string;
   disabled?: boolean;

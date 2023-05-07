@@ -1,0 +1,53 @@
+.layout {
+    width: 100%;
+    .storeBody {
+        width: 221px;
+        margin:0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .container {
+        width: 146px;
+        height: 177px;
+        margin:0 auto;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        button {
+            margin:0 auto;
+        }
+        h2 {    
+            height:60%;
+            margin-top: 10px;
+        }
+        &::before {
+            content: "";
+            width: 117px;
+            height: 47px;
+            position: absolute;
+            left: 48px;
+            top: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("/images/myScore.svg");
+
+        }
+    }
+}
+.body {
+    text-align: center;
+    flex-grow: 0;
+    height:20%;
+    h2{
+        margin: 0;
+        font-size: 23px;
+        font-weight: 700;
+    }
+}
+
+.container {
+
+}

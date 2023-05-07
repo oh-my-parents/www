@@ -50,7 +50,7 @@ export default function InputAnswer() {
         onClick={onClickNextButton}
         disabled={!keyword || keyword.length < 1}
       >
-        다음 문제
+        다음문제
       </Button>
     </>
   );

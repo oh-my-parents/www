@@ -4,9 +4,7 @@ import Logo from "../../molecules/Logo";
 import $ from "./index.module.scss";
 import cn from "classnames";
 
-type Props = {};
-
-const index = (props: Props) => {
+const index = () => {
   const onClickLeft = () => {
     console.log("onClickLeft");
   };

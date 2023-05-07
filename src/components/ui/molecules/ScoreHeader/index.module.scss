@@ -1,0 +1,34 @@
+.layout {
+    background: linear-gradient(180deg, #6A5FE8 0%, #000000 238.46%);
+    box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    width: 375px;
+    margin:0 auto;
+    box-sizing: border-box;
+    padding: 40px;
+    flex-direction: column;
+    gap: 20px;
+    color: #FFFFFF;
+    .logo { 
+    font-weight: 700;
+    font-size: 13.3333px;
+    line-height: 16px;
+    letter-spacing: -0.08em;
+    text-align: center;
+    }
+    .title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.08em;
+    text-align: center;
+    }
+    .score {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    text-align: center;
+    letter-spacing: -0.1em;
+    }
+}

@@ -15,13 +15,24 @@ type Props = {
     | "soon"
     | "please";
   children?: React.ReactNode;
+  className?: string;
 };
 
-function Icon({ src, size, variant, children }: Props) {
+function Icon({ src, size, variant, children, className }: Props) {
   if (src) {
-    return <img src={src} className={cn($.img, $[size], $[variant])} alt="" />;
+    return (
+      <img
+        src={src}
+        className={cn($.img, $[size], $[variant], className)}
+        alt=""
+      />
+    );
   }
-  return <span className={cn($.img, $[size], $[variant])}>{children}</span>;
+  return (
+    <span className={cn($.img, $[size], $[variant], className)}>
+      {children}
+    </span>
+  );
 }
 
 export default Icon;

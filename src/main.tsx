@@ -13,6 +13,8 @@ import { HelmetProvider } from "react-helmet-async";
 import SEO from "./components/SEO";
 import ShareLayout from "./components/ui/template/ShareLayout";
 import Soon from "./routes/Soon";
+import Score from "./routes/Score";
+import ParentSelectPage from "./routes/ParentSelectPage";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +72,14 @@ const router = createBrowserRouter([
   {
     path: "/soon",
     element: <Soon />,
+  },
+  {
+    path: "/score",
+    element: <Score />,
+  },
+  {
+    path: "/selectparents",
+    element: <ParentSelectPage />,
   },
 ]);
 

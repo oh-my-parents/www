@@ -36,7 +36,9 @@ const Problem = () => {
       <ParentsSelect
         onClickMotherButton={onClickMotherButton}
         onClickFatherButton={onClickFatherButton}
-      />
+      >
+        누구에 대해 알아볼까요?
+      </ParentsSelect>
     );
   }
 

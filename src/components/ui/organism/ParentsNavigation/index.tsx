@@ -3,15 +3,17 @@ import IconButton from "../../molecules/IconButton";
 import Logo from "../../molecules/Logo";
 import $ from "./index.module.scss";
 import cn from "classnames";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   hasBackButton?: boolean;
 };
 
 const index = ({ hasBackButton }: Props) => {
+  const navigate = useNavigate();
 
   const onClickLeft = () => {
-    console.log("onClickLeft");
+    navigate(-1);
   };
 
   return (

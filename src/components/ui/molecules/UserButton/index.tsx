@@ -17,7 +17,7 @@ export default function UserButton() {
         테스트 시작하기
       </Button>
       <Button size="medium" variant="user" onClick={onClickCheckScore}>
-        내점수 확인하기
+        내 점수 확인하기
       </Button>
     </div>
   );

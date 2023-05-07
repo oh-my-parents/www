@@ -15,7 +15,6 @@ const useGetChildrenReponse = (id: string, parentType: "FATHER" | "MOTHER") => {
 
   useEffect(() => {
     if (id && parentType) {
-      console.log("id", id, "parentType", parentType);
       (async () => {
         const { answered, answers, name } = await parentsService.getAnswer({
           id,

@@ -42,6 +42,17 @@ export const ParentsReciveAnswer = atom<ChildAnswer[]>({
   default: [],
   effects_UNSTABLE: [persistAtom],
 });
+
+export type UserResultAnswerType = ChildAnswer & {
+  parentScore: number;
+};
+
+export const UserResultAnswer = atom<UserResultAnswerType[]>({
+  key: "UserResultAnswer",
+  default: [],
+  effects_UNSTABLE: [persistAtom],
+});
+
 /**
  * {1: ture, 2:false, }
  */
@@ -70,5 +81,11 @@ export const ChildName = atom<string>({
 export const Id = atom<string>({
   key: "Id",
   default: "",
+  effects_UNSTABLE: [persistAtom],
+});
+
+export const ResultUserScore = atom<number>({
+  key: "ResultUserScore",
+  default: 0,
   effects_UNSTABLE: [persistAtom],
 });

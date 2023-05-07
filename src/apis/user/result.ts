@@ -12,9 +12,10 @@ type Result = {
     },
   ];
 };
+
 const getScore = async (parentType: parentType) => {
   try {
-    const { data } = await fetcher.post<ResponseContainer<string>>(
+    const { data } = await fetcher.post<ResponseContainer<number>>(
       "/user/score",
       { parentType },
     );
@@ -26,6 +27,9 @@ const getScore = async (parentType: parentType) => {
   }
 };
 
+/**
+ * unsued
+ */
 const getResults = async (parentType: parentType) => {
   const { data } = await fetcher.post<ResponseContainer<Result>>(
     "/user/result",

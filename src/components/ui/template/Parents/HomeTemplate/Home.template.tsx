@@ -4,7 +4,7 @@ import cn from "classnames";
 import josa from "@/utils/josa";
 
 const HomeTemplate = () => {
-  const name = "우와아";
+  const name = "우와";
   const displayName = josa.이가(name);
   return (
     <div className={cn($.homeContainer)}>

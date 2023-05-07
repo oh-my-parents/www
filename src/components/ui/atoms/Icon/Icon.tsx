@@ -10,7 +10,8 @@ type Props = {
     | "default"
     | "music"
     | "parents"
-    | "navigation";
+    | "navigation"
+    | "variant";
   children?: React.ReactNode;
 };
 

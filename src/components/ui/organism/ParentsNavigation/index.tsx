@@ -9,6 +9,7 @@ type Props = {
 };
 
 const index = ({ hasBackButton }: Props) => {
+
   const onClickLeft = () => {
     console.log("onClickLeft");
   };

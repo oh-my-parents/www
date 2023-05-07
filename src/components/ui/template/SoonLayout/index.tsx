@@ -3,7 +3,18 @@ import Typography from "../../atoms/Typography/Typography";
 import cn from "classnames";
 import Icon from "../../atoms/Icon/Icon";
 import soon from "/images/soon.svg";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function SoonLayout() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate(-1);
+    }, 3000);
+  }, []);
+
   return (
     <div className={cn($.layout)}>
       <Typography size="large" variant="soon">

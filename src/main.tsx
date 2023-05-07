@@ -57,6 +57,10 @@ const router = createBrowserRouter([
         path: "store",
         element: <ParentsPage.Store />,
       },
+      {
+        path: "prepare",
+        element: <ParentsPage.Prepare />,
+      },
     ],
   },
   {

@@ -9,12 +9,14 @@ import { KAKAO_BUTTON_URL } from "@/constants/api.constants";
 // state
 import { useRecoilState } from "recoil";
 import { IsLogin } from "@/utils/recoil/atom";
+import authManager from "@/utils/authManager/authManager";
 
 export default function MainItems() {
   const [isLogin, setIsLogin] = useRecoilState(IsLogin);
 
   const onClickLogout = () => {
     setIsLogin(false);
+    authManager.removeAuth();
   };
   const onClickKakaoButton = () => {
     window.location.replace(KAKAO_BUTTON_URL);

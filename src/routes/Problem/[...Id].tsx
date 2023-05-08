@@ -17,7 +17,18 @@ const ProblemDetailPages = () => {
   const questions = useRecoilValue(Question);
   const data = questions[Number(id) - 1];
   const setAnswer = useSetRecoilState(Answer);
-
+  const shillingIcons: { [key: number]: string } = {
+    1: "🧐",
+    2: "🧐",
+    4: "😎",
+    3: "🧐",
+    5: "🧐",
+    6: "🧐",
+    7: "🧐",
+    8: "🧐",
+    9: "🧐",
+    10: "🧐",
+  };
   const onClickAnswer = (e: MouseEvent<HTMLButtonElement>) => {
     const content = e.currentTarget.textContent!;
 
@@ -34,15 +45,15 @@ const ProblemDetailPages = () => {
   const AnswerRouter = () => {
     switch (data.questionType) {
       case "WORD":
-        return <InputAnswer />;
+        return <InputAnswer shillingIcon={shillingIcons[Number(id)]} />;
       case "DROPDOWN":
-        return <DropdownAnswer />;
+        return <DropdownAnswer shillingIcon={shillingIcons[Number(id)]} />;
       case "SELECT":
         return <SelectAnswer onClick={onClickAnswer} choices={data.choices} />;
       case "SENTENCE":
-        return <TextAreaAnswer />;
+        return <TextAreaAnswer shillingIcon={shillingIcons[Number(id)]} />;
       default:
-        return <InputAnswer />;
+        return <InputAnswer shillingIcon={shillingIcons[Number(id)]} />;
     }
   };
 

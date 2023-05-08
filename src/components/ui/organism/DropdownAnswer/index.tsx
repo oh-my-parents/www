@@ -9,7 +9,11 @@ import { Answer } from "@/utils/recoil/atom";
 import { useRecoilState } from "recoil";
 import { useParams } from "react-router-dom";
 
-export default function DropdownAnswer() {
+export default function DropdownAnswer({
+  shillingIcon,
+}: {
+  shillingIcon: string;
+}) {
   const age = [...new Array(100).fill(0)].map(
     (item, index) => item + index + 1,
   );
@@ -39,7 +43,7 @@ export default function DropdownAnswer() {
   return (
     <>
       <Card.Container className={cn($.answerCard)}>
-        <Card.Shilling>😳</Card.Shilling>
+        <Card.Shilling>{shillingIcon}</Card.Shilling>
         <Card.Body className={cn($.body)}>
           <DropDown
             array={age}

@@ -22,10 +22,6 @@ const router = createBrowserRouter([
     element: <Main />,
   },
   {
-    path: "/sample",
-    element: <Sample />,
-  },
-  {
     path: "/oauth",
     element: <Callback />,
   },

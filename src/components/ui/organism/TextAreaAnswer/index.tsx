@@ -12,7 +12,11 @@ import { useParams } from "react-router-dom";
 import userService from "@/service/user.service";
 import { parentType } from "@/apis/question/type";
 
-export default function TextAreaAnswer() {
+export default function TextAreaAnswer({
+  shillingIcon,
+}: {
+  shillingIcon: string;
+}) {
   const { id } = useParams();
   const naviagtion = useNavigate();
   const navigate = useProblemNavigate();
@@ -42,7 +46,7 @@ export default function TextAreaAnswer() {
   return (
     <>
       <Card.Container className={cn($.answerCard)}>
-        <Card.Shilling>😳</Card.Shilling>
+        <Card.Shilling>{shillingIcon}</Card.Shilling>
         <Card.Body className={cn($.body)}>
           <TextArea
             value={keyword}

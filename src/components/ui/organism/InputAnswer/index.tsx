@@ -9,7 +9,11 @@ import { Answer } from "@/utils/recoil/atom";
 import { useRecoilState } from "recoil";
 import { useParams } from "react-router-dom";
 
-export default function InputAnswer() {
+type Props = {
+  shillingIcon: string;
+};
+
+export default function InputAnswer({ shillingIcon }: Props) {
   const [answer, setAnswer] = useRecoilState(Answer);
   const { id } = useParams();
   const navigate = useProblemNavigate();
@@ -32,7 +36,7 @@ export default function InputAnswer() {
   return (
     <>
       <Card.Container className={cn($.answerCard)}>
-        <Card.Shilling>😳</Card.Shilling>
+        <Card.Shilling>{shillingIcon}</Card.Shilling>
         <Card.Body className={cn($.body)}>
           <Input
             size="large"

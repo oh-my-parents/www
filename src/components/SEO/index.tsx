@@ -11,7 +11,7 @@ const SEO = ({
   title = "Oh! My Parents",
   description = "부모님께 보내는 작은 편지: 어버이날 중간고사편",
   keywords = "어버이날",
-  imgsrc = "/images/seo.png",
+  imgsrc = "/images/barm.png",
 }: SEOProps) => {
   return (
     <Helmet>

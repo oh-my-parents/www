@@ -18,7 +18,7 @@ export default function ParentsButton({ onClickAgainButton }: any) {
         content: {
           title: "어버이날 모의고사",
           description: "부모님 얼마나 알고계신가요?",
-          imageUrl: `${APP_HOST}/images/seo.png`,
+          imageUrl: `${APP_HOST}/images/barm.png`,
           link: {
             mobileWebUrl: APP_HOST,
             webUrl: APP_HOST,

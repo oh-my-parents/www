@@ -8,9 +8,9 @@ type Props = React.HTMLAttributes<HTMLParagraphElement> & {
   variant: "plain" | "gradient";
 };
 
-export default function Logo({ size, variant }: Props) {
+export default function Logo({ size, variant, className }: Props) {
   return (
-    <Link className={cn($.a, $[size], $[variant])} to={"/"}>
+    <Link className={cn($.a, $[size], $[variant], className)} to={"/"}>
       {TEXT.LOGO}
     </Link>
   );

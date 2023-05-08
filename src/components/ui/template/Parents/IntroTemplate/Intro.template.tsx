@@ -31,8 +31,8 @@ const IntroTemplate = () => {
         <ParentsCard.Body>
           <ParentsCard.Text>
             {answered
-              ? TEXT.PARENTS.INTRO.DESCRIPTION
-              : TEXT.PARENTS.INTRO.ANSWERED_DESCRIPTION}
+              ? TEXT.PARENTS.INTRO.ANSWERED_DESCRIPTION
+              : TEXT.PARENTS.INTRO.DESCRIPTION}
           </ParentsCard.Text>
           <ParentsCard.ButtonGroup>
             <ParentsCard.Button onClick={onClickButton}>

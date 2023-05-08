@@ -3,16 +3,21 @@ import ScoreHeader from "../../molecules/ScoreHeader";
 import ScoreBody from "../../molecules/ScoreBody";
 import $ from "./index.module.scss";
 import { useEffect, useState } from "react";
+import { ResultUserScore, UserName } from "@/utils/recoil/atom";
+import { useRecoilValue } from "recoil";
+import Laoding from "../Loading/Loading";
 
 export default function ScoreLayout() {
-  const data = { name: "낙현", score: 100 };
-  const [obj, setObj] = useState({
-    name: "낙현",
-    score: 32,
-    icon: "🥔",
-    title: "혹시 말하는 감자...?",
-    description: "이번 기회에 부모님에 대해 좀 더 알아가는건 어떨까요?",
-  });
+  const score = useRecoilValue(ResultUserScore);
+  const username = useRecoilValue(UserName);
+  const data = { name: username, score };
+  const [obj, setObj] = useState<{
+    name: string;
+    score: number;
+    icon: string;
+    title: string;
+    description: string;
+  } | null>(null);
 
   useEffect(() => {
     if (data.score < 20) {
@@ -72,10 +77,13 @@ export default function ScoreLayout() {
         "지금부터 부모님에 대한 지지관계를 철회한다.\n오늘부터 부모님과 나는 한 몸으로 간주하여\n부모님에 대한 공격은 나에 대한 공격으로 간주한다.",
     });
   }, []);
+
+  if (obj === null) return <Laoding />;
+
   return (
     <div>
       <div>
-        <ScoreHeader name={obj.name} score={obj.score} />
+        <ScoreHeader name={obj!.name} score={obj!.score} />
         <ScoreBody
           icon={obj.icon}
           title={obj.title}

@@ -21,7 +21,7 @@ export default function ScoreLayout() {
   } | null>(null);
 
   useEffect(() => {
-    if (user.name !== "" && user.score !== 0) {
+    if (user.name !== "") {
       if (data.score < 20) {
         setObj({
           ...data,

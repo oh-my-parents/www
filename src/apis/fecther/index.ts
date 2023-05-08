@@ -3,6 +3,7 @@ import {
   AUTH_REQUIRED_REGEX_LIST,
   BASE_URL,
   DEFAULT_TIME_OUT,
+  WHITE_LIST,
 } from "@/constants/api.constants";
 import authManager from "@/utils/authManager/authManager";
 
@@ -20,6 +21,7 @@ fetcher.interceptors.request.use((config) => {
   );
 
   if (!isAuthNeed) return config;
+  if (WHITE_LIST.some((pattern) => config.url?.match(pattern))) return config;
 
   // 여기부터는 auth가 필요하다.
   if (!token) throw new Error("UN Authorization");

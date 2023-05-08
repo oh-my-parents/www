@@ -12,7 +12,6 @@ const useGetChildrenReponse = (id: string, parentType: "FATHER" | "MOTHER") => {
     useRecoilState(ParentsReciveAnswer);
   const [childName, setChildName] = useRecoilState(ChildName);
   const [answered, setAnswered] = useRecoilState(IsAnswered);
-
   useEffect(() => {
     if (id && parentType) {
       (async () => {

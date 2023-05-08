@@ -89,3 +89,8 @@ export const ResultUserScore = atom<number>({
   default: 0,
   effects_UNSTABLE: [persistAtom],
 });
+
+export const UserName = atom<string>({
+  key: "UserName",
+  default: "",
+});

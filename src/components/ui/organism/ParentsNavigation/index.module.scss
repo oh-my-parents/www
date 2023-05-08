@@ -35,4 +35,13 @@
     margin: 0 auto;
     text-align: center;
   }
+
+  &.unmoveble {
+    a {
+      pointer-events: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
 }

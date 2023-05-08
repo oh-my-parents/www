@@ -7,9 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 type Props = {
   hasBackButton?: boolean;
+  moveable?: boolean;
 };
 
-const index = ({ hasBackButton }: Props) => {
+const index = ({ hasBackButton, moveable = false }: Props) => {
   const navigate = useNavigate();
 
   const onClickLeft = () => {
@@ -28,7 +29,7 @@ const index = ({ hasBackButton }: Props) => {
           buttonSize="small"
         />
       ) : null}
-      <div className={$.logoContainer}>
+      <div className={cn($.logoContainer, { [$.unmoveble]: !moveable })}>
         <Logo size="medium" variant="gradient" />
       </div>
     </div>

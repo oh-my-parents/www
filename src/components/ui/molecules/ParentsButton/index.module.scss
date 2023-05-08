@@ -1,7 +1,30 @@
 .parentsButton {
+  display: flex;
+  flex-direction: column;
+  width: 221px;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.kakaoButton {
+  width: 222px !important;
+  height: 44px !important;
+  display: flex;
+  align-items: center;
+  div {
+    justify-content: center;
     display: flex;
-    flex-direction: column;
-    width:221px;
-    gap: 12px;
-    margin:0 auto;
+    width: 100% !important;
+    height: 100% !important;
+    align-self: center !important;
+    justify-self: unset !important;
+    align-items: center !important;
+    img {
+      position: static !important;
+      align-items: center;
+    }
+    p {
+      font-size: 14px !important;
+    }
+  }
 }

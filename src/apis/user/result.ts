@@ -15,10 +15,9 @@ type Result = {
 
 const getScore = async (parentType: parentType) => {
   try {
-    const { data } = await fetcher.post<ResponseContainer<number>>(
-      "/user/score",
-      { parentType },
-    );
+    const { data } = await fetcher.post<
+      ResponseContainer<{ name: string; score: number }>
+    >("/user/score", { parentType });
     if (data.code !== 200) throw new Error(data.message);
 
     return data.data;

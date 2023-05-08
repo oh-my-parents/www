@@ -19,8 +19,12 @@ const index = () => {
   };
 
   const onClickNextButton = async () => {
-    await saveAnswer();
-    navigate("/parents/prepare");
+    try {
+      await saveAnswer();
+      navigate("/parents/prepare");
+    } catch (e) {
+      alert(e);
+    }
   };
   return (
     <div className={cn($.container)}>
@@ -42,7 +46,7 @@ const index = () => {
         className={cn($.button)}
         onClick={onClickNextButton}
       >
-        우리 아이 점수 저장하기
+        결과 저장하기
       </Button>
     </div>
   );

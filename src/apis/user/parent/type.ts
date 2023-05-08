@@ -25,8 +25,9 @@ export type GetChildAnswerResponse = ResponseContainer<{
 }>;
 
 export type ParentAnswerRequest = {
+  id: string;
   parentType: parentType;
-  userParentAnswer: {
+  userParentAnswers: {
     number: number;
     score: number;
   }[];

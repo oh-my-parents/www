@@ -5,16 +5,28 @@ import Card from "@/components/ui/molecules/Card";
 import Icon from "@/components/ui/atoms/Icon/Icon";
 import Typography from "@/components/ui/atoms/Typography/Typography";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Loading from "../../Loading/Loading";
 
 const index = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!loading) {
+      setTimeout(() => {
+        navigate("/parents/store");
+      }, 2000);
+    }
+  }, [loading]);
 
   useEffect(() => {
     setTimeout(() => {
-      navigate("/parents/store");
+      setLoading(false);
     }, 2000);
   }, []);
+
+  if (loading) return <Loading />;
 
   return (
     <div className={cn($.layout)}>
@@ -33,7 +45,6 @@ const index = () => {
         <Typography size="medium" variant="prepare">
           채점을 완료했어요!
           <br />
-          결과를 저장하시겠어요?
         </Typography>
       </div>
     </div>

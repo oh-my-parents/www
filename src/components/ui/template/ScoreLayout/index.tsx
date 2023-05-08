@@ -5,12 +5,10 @@ import $ from "./index.module.scss";
 import { useEffect, useState } from "react";
 import Laoding from "../Loading/Loading";
 import useUserScore from "@/hooks/useUserScore";
-import useGetNickname from "@/hooks/useGetNickname";
 
 export default function ScoreLayout() {
-  const [score, _] = useUserScore();
-  const username = useGetNickname();
-  const data = { name: username, score };
+  const [user, _] = useUserScore();
+  const data = user;
   const [obj, setObj] = useState<{
     name: string;
     score: number;
@@ -20,7 +18,7 @@ export default function ScoreLayout() {
   } | null>(null);
 
   useEffect(() => {
-    if (username !== "" && score !== 0) {
+    if (user.name !== "" && user.score !== 0) {
       if (data.score < 20) {
         setObj({
           ...data,
@@ -78,7 +76,7 @@ export default function ScoreLayout() {
           "지금부터 부모님에 대한 지지관계를 철회한다.\n오늘부터 부모님과 나는 한 몸으로 간주하여\n부모님에 대한 공격은 나에 대한 공격으로 간주한다.",
       });
     }
-  }, [username, score]);
+  }, [user]);
 
   if (obj === null) return <Laoding />;
 

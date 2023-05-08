@@ -84,13 +84,18 @@ export const Id = atom<string>({
   effects_UNSTABLE: [persistAtom],
 });
 
-export const ResultUserScore = atom<number>({
+export const ResultUserScore = atom<{ name: string; score: number }>({
   key: "ResultUserScore",
-  default: 0,
+  default: { name: "", score: 0 },
   effects_UNSTABLE: [persistAtom],
 });
 
 export const UserName = atom<string>({
   key: "UserName",
+  default: "",
+});
+
+export const ChildrenId = atom<string>({
+  key: "ChildrenId",
   default: "",
 });

@@ -11,7 +11,7 @@ const index = () => {
   const navigate = useNavigate();
 
   const onClickAgainButton = () => {
-    navigate("/parents");
+    navigate("/parents/report");
   };
 
   const onClickStoreButton = () => {};

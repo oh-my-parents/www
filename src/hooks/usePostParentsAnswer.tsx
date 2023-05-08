@@ -3,6 +3,7 @@ import {
   ParentsSelectAnswer,
   Parents,
   AtomParentsSelectAnswerType,
+  ChildrenId,
 } from "@/utils/recoil/atom";
 import parentsService from "@/service/parents.service";
 
@@ -11,8 +12,10 @@ type PARENTS = "MOTHER" | "FATHER";
 const usePostParentsAnswer = () => {
   const parentsAnswer = useRecoilValue(ParentsSelectAnswer);
   const parentType = useRecoilValue(Parents);
+  const childrenId = useRecoilValue(ChildrenId);
 
   const createDto = (
+    id: string,
     parentType: PARENTS,
     parentsAnswer: AtomParentsSelectAnswerType,
   ) => {
@@ -24,14 +27,15 @@ const usePostParentsAnswer = () => {
     });
 
     return {
+      id,
       parentType,
-      userParentAnswer: data,
+      userParentAnswers: data,
     };
   };
 
   const postParentsAnswer = async () => {
     const data = await parentsService.submitAnswer(
-      createDto(parentType as PARENTS, parentsAnswer),
+      createDto(childrenId, parentType as PARENTS, parentsAnswer),
     );
     return data;
   };

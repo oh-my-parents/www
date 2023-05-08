@@ -22,7 +22,6 @@ function Input({
 }: Props) {
   return (
     <input
-      autoFocus
       type={type}
       value={value}
       onChange={onChange}

@@ -16,7 +16,6 @@ export default function TextArea({
   return (
     <>
       <textarea
-        autoFocus
         onChange={onChange}
         value={value}
         className={cn($[size], $[variant], className)}

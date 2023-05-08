@@ -93,9 +93,11 @@ export const ResultUserScore = atom<{ name: string; score: number }>({
 export const UserName = atom<string>({
   key: "UserName",
   default: "",
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const ChildrenId = atom<string>({
   key: "ChildrenId",
   default: "",
+  effects_UNSTABLE: [persistAtom],
 });

@@ -34,7 +34,7 @@ export default function ShareLayout() {
         content: {
           title: "어버이날 모의고사",
           description: "부모님 얼마나 알고계신가요?",
-          imageUrl: "/images/seo.png",
+          imageUrl: `${APP_HOST}/images/seo.png`,
           link: {
             mobileWebUrl: url,
             webUrl: url,

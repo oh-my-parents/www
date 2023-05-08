@@ -1,38 +1,38 @@
-.navigation{
+.navigation {
   display: block;
+  position: relative;
   justify-content: flex-start;
-  gap:43px;
+  gap: 43px;
   padding: 12px 0;
   align-items: flex-start;
   margin: 50px 40px 30px 40px;
-  button{
+  button {
     position: absolute !important;
     display: inline;
     display: flex;
     align-self: center;
     justify-content: center;
-    
-    img{
+
+    img {
       width: 8px !important;
-      height: 13px !important;;
+      height: 13px !important;
       padding: 5px 2px;
     }
   }
-  .spacer::after{
+  .spacer::after {
     content: " ";
     display: block;
     width: 100xpx;
     height: 100%;
     background-color: #000000;
   }
-   
 }
 
-.logoContainer{
+.logoContainer {
   display: block;
   text-align: center;
   a {
     margin: 0 auto;
     text-align: center;
-   }
+  }
 }

@@ -1,4 +1,13 @@
-.errorContainer {
+.errorConatiner {
   height: 100vh;
   height: 100svh;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 16px;
+  nav {
+    padding: 1rem;
+    p {
+      padding: 8px 0;
+    }
+  }
 }

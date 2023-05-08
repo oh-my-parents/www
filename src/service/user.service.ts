@@ -14,7 +14,7 @@ const getResults = async (parentType: parentType) => {
 };
 
 const submitAnswer = async (parentType: parentType, answers: string[]) => {
-  const userChildAnswer = answers.map((answer, index) => {
+  const userChildAnswers = answers.map((answer, index) => {
     return {
       number: index + 1,
       answer,
@@ -23,7 +23,7 @@ const submitAnswer = async (parentType: parentType, answers: string[]) => {
 
   const data = await userApi.user.submitAnswer({
     parentType,
-    userChildAnswer,
+    userChildAnswers,
   });
 
   return data;

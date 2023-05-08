@@ -9,7 +9,9 @@ export default function UserButton() {
     navigate("/problem");
   };
 
-  const onClickCheckScore = () => {};
+  const onClickCheckScore = () => {
+    navigate("/selectparents");
+  };
 
   return (
     <div className={cn($.userButton)}>

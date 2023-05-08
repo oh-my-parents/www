@@ -33,7 +33,18 @@ export default function TextAreaAnswer({
       setAnswer([...answer, keyword]);
     }
     if (Number(id) === 10) {
-      userService.submitAnswer(parentsType as parentType, answer);
+      // if (answer.length !== 10) return alert("모든 문제를 풀어주세요");
+      if (answer.length === 9) {
+        userService.submitAnswer(parentsType as parentType, [
+          ...answer,
+          keyword,
+        ]);
+      } else if (answer.length === 10) {
+        userService.submitAnswer(parentsType as parentType, [
+          ...answer.slice(0, 9),
+          keyword,
+        ]);
+      } else return alert("모든 문제를 풀어주세요");
       naviagtion("/share");
       return;
     }

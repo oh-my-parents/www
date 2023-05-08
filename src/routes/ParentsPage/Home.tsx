@@ -8,7 +8,8 @@ import Loading from "@/components/ui/template/Loading/Loading";
 const Home = () => {
   const navigate = useNavigate();
   const { id, parents } = useParams();
-  const { childName } = useGetChildrenReponse(id!, parents as parentType);
+  const userId = decodeURI(id!);
+  const { childName } = useGetChildrenReponse(userId, parents as parentType);
 
   const lazyNaviage = () => {
     setTimeout(() => {

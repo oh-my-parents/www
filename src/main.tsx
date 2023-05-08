@@ -14,6 +14,7 @@ import ShareLayout from "./components/ui/template/ShareLayout";
 import Soon from "./routes/Soon";
 import Score from "./routes/Score";
 import ParentSelectPage from "./routes/ParentSelectPage";
+import ErrorPages from "./routes/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
   {
     path: "/selectparents",
     element: <ParentSelectPage />,
+  },
+  {
+    path: "*",
+    element: <ErrorPages />,
   },
 ]);
 

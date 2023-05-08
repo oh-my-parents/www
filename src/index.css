@@ -23,6 +23,8 @@ a {
   padding: 0px;
   overflow: auto;
   height: 100vh;
+  /* when user can use svh use svh*/
+  height: 100svh;
   /* background-size: 200% 200%; */
   /* animation: Gradient 16s ease infinite; */
 }

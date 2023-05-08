@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Sample from "./routes/Sammple";
 import Callback from "./routes/Callback";
 import Main from "./routes/main";
 import { RecoilRoot } from "recoil";
